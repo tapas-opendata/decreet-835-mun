@@ -1,0 +1,528 @@
+<!----- 
+
+Території обслуговування загальноосвітніх навчальних закладів
+https://data.gov.ua/pages/835-recm-education-territories
+
+----->
+
+<h2 style="margin-bottom: 15px; margin-top: 50px;">1. Коротка довідка</h2>
+
+<table style="margin-bottom: 30px">
+  <tr>
+   <td><strong>Критерій</strong>
+   </td>
+   <td><strong>Характеристика</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>Нормативно-правові акти, які визначають створення, збір, зберігання, використання й поширення даних
+   </td>
+   <td><a href="https://zakon.rada.gov.ua/laws/show/2145-19">Закон України «Про освіту» від 05.09.2017 № 2145-VIII</a>, <a href="https://zakon.rada.gov.ua/laws/show/651-14">Закон України «Про загальну середню освіту» від 13.05.1999 № 651-XIV</a>, <a href="https://zakon.rada.gov.ua/laws/show/z0564-18">Наказ МОН України «Про затвердження Порядку зарахування, відрахування та переведення учнів до державних та комунальних закладів освіти для здобуття повної загальної середньої освіти» від 16.04.2018 № 367</a>, нормативно-правові акти органів місцевого самоврядування
+   </td>
+  </tr>
+  <tr>
+   <td>Інформація, що створюється, збирається, зберігається й поширюється
+   </td>
+   <td>Органи місцевого самоврядування закріплюють за закладами загальної середньої освіти території обслуговування шляхом прийняття відповідних нормативно-правових актів.
+   </td>
+  </tr>
+  <tr>
+   <td>Способи оновлення
+   </td>
+   <td>Зміна територій обслуговування або мережі загальноосвітніх навчальних закладів
+   </td>
+  </tr>
+  <tr>
+   <td>Частота оновлення інформації
+   </td>
+   <td>Позапланово (протягом трьох робочих днів з моменту внесення змін)
+   </td>
+  </tr>
+  <tr>
+   <td>Тип даних
+   </td>
+   <td>Структуровані, геопросторові
+   </td>
+  </tr>
+  <tr>
+   <td>Формати файлів
+   </td>
+   <td>XLSX, ODS, CSV, можливі інші формати структурованих або геопросторових даних, що підтримують векторну графіку
+   </td>
+  </tr>
+</table>
+
+
+<h2 style="margin-bottom: 15px; margin-top: 50px;">2. Огляд нормативно-правової бази</h2>
+
+
+<p style="margin-bottom: 25px">
+Відповідно до статті 13 <a href="https://zakon.rada.gov.ua/laws/show/2145-19">Закону України «Про освіту» </a>та статті 18 <a href="https://zakon.rada.gov.ua/laws/show/651-14">Закону України «Про загальну середню освіту»</a> органи місцевого самоврядування формують мережу закладів освіти й закріплюють за закладами загальної середньої освіти відповідні території обслуговування. Інформація про території обслуговування, як правило, узагальнюється в таблицях.
+</p>
+<h2 style="margin-bottom: 15px; margin-top: 50px;">3. Підготовка даних та структура набору</h2>
+
+
+<p style="margin-bottom: 25px">
+Органи місцевого самоврядування використовують два основні підходи до оприлюднення даних про території обслуговування:
+</p>
+<ol style="margin-left: 30px">
+
+<li style="margin-bottom: 10px;">оприлюднення інформації про кожну територію обслуговування та опис її меж (ресурс <strong>Territories</strong>);
+
+<li style="margin-bottom: 10px;">оприлюднення інформації про віднесення кожної адреси до території обслуговування (ресурс <strong>Addresses</strong>).
+</li>
+</ol>
+<p style="margin-bottom: 25px">
+Оприлюднення набору можливе у форматах геопросторових даних, що підтримують векторну графіку (SHP, XML, GeoJSON тощо).
+</p>
+<h3 style="margin-bottom: 15px; margin-top: 30px;">3.1. Перелік територій обслуговування (ресурс Territories)</h3>
+
+
+
+<table style="margin-bottom: 30px">
+  <tr>
+   <td colspan="2" ><strong><center>Інформація про ресурс</center></strong>
+   </td>
+  </tr>
+  <tr>
+   <td>Назва ресурсу
+   </td>
+   <td>Territories
+   </td>
+  </tr>
+  <tr>
+   <td>Що є одним записом в таблиці (рядком)
+   </td>
+   <td>Територія обслуговування одного загальноосвітнього навчального закладу
+   </td>
+  </tr>
+  <tr>
+   <td>Спосіб оновлення
+   </td>
+   <td>Розміщення нової версії ресурсу
+   </td>
+  </tr>
+  <tr>
+   <td colspan="2" ><strong><center>Прикріплені файли</center></strong>
+   </td>
+  </tr>
+  <tr>
+   <td>Шаблон таблиці
+   </td>
+   <td><a href="https://github.com/tapas-opendata/decreet-835-mun/raw/master/education/territories/territories/Territories.xlsx">Territories.xlsx</a>
+   </td>
+  </tr>
+  <tr>
+   <td>Приклад таблиці
+   </td>
+   <td><a href="https://github.com/tapas-opendata/decreet-835-mun/raw/master/education/territories/territories/Example.xlsx">Example.xlsx</a>
+   </td>
+  </tr>
+  <tr>
+   <td>Структура (XLSX, CSV, JSON)
+   </td>
+   <td><a href="https://github.com/tapas-opendata/decreet-835-mun/raw/master/education/territories/territories/Structure.xlsx">Structure.xlsx</a>, <a href="https://raw.githubusercontent.com/tapas-opendata/decreet-835-mun/master/education/territories/territories/Structure.csv">Structure.csv</a>, <a href="https://raw.githubusercontent.com/tapas-opendata/decreet-835-mun/master/education/territories/territories/Structure.json">Structure.json</a>
+   </td>
+  </tr>
+</table>
+
+
+
+
+
+<div style="margin-bottom: 25px; background-color:#F4F7FA; padding: 20px"><p><b>Зверніть увагу!</b> Набір необхідно готувати й вести в електронних таблицях Microsoft Excel, LibreOffice Calc або Google Таблицях. Для оприлюднення набору використовуються формати XLSX, ODS, CSV. На портал достатньо завантажити XLSX або ODS книгу, що містить один аркуш. За таких умов ресурс потрапить у базу даних порталу (сховище даних) і його CSV-версія згенерується автоматично. Також дані будуть доступними в форматі JSON через <a href="https://docs.ckan.org/en/latest/maintaining/datastore.html">API порталу</a>.</p></div>
+
+
+<p style="margin-bottom: 10px; text-align: center;"><strong>Таблиця 1 — Структура таблиці (ресурсу) Territories </strong></p>
+
+<table style="margin-bottom: 30px">
+  <tr>
+   <td><strong>Назва колонки (name)</strong>
+   </td>
+   <td><strong>Заголовок колонки (title)</strong>
+   </td>
+   <td><strong>Опис значень (description)</strong>
+   </td>
+   <td><strong>Тип даних (datatype)</strong>
+   </td>
+   <td><strong>Вимога заповнення (required)</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>identifier
+   </td>
+   <td>Ідентифікатор
+   </td>
+   <td>Порядковий номер або будь-який інший ідентифікатор території обслуговування. Наприклад: 5.
+   </td>
+   <td>Текст (string)
+   </td>
+   <td>Істина (true)
+   </td>
+  </tr>
+  <tr>
+   <td>institutionIdentifier
+   </td>
+   <td>Ідентифікатор закладу
+   </td>
+   <td>Код ЄДРПОУ закладу освіти. Наприклад: 01234567. Якщо код ЄДРПОУ відсутній, вказати null.
+   </td>
+   <td>Текст (string)
+   </td>
+   <td>Хибність (false)
+   </td>
+  </tr>
+  <tr>
+   <td>institutioPprefLabel
+   </td>
+   <td>Назва закладу
+   </td>
+   <td>Повна назва закладу освіти. Наприклад: Луцька спеціалізована школа І-ІІІ ступенів №1.
+   </td>
+   <td>Текст (string)	
+   </td>
+   <td>Істина (true)
+   </td>
+  </tr>
+  <tr>
+   <td>description
+   </td>
+   <td>Опис
+   </td>
+   <td>Опис меж території обслуговування. Адреси, назви вулиць та інші орієнтири мають бути відділені знаком крапка з комою.
+   </td>
+   <td>Текст (string)
+   </td>
+   <td>Істина (true)
+   </td>
+  </tr>
+</table>
+
+
+<h3 style="margin-bottom: 15px; margin-top: 30px;">3.1. Перелік адрес, що відносяться до територій обслуговування (ресурс Addresses)</h3>
+
+
+<p style="margin-bottom: 25px">
+Дані з таблиці Addresses поєднуються з даними таблиці Territories через поле <strong>territoryIdentifier</strong>.
+</p>
+
+<table style="margin-bottom: 30px">
+  <tr>
+   <td colspan="2" ><strong><center>Інформація про ресурс</center></strong>
+   </td>
+  </tr>
+  <tr>
+   <td><strong>Назва ресурсу</strong>
+   </td>
+   <td>Addresses
+   </td>
+  </tr>
+  <tr>
+   <td>Що є одним записом в таблиці (рядком)
+   </td>
+   <td>Одна адреса, що відноситься до певної території обслуговування
+   </td>
+  </tr>
+  <tr>
+   <td>Спосіб оновлення
+   </td>
+   <td>Розміщення нової версії ресурсу
+   </td>
+  </tr>
+  <tr>
+   <td colspan="2" ><strong><center>Прикріплені файли</center></strong>
+   </td>
+  </tr>
+  <tr>
+   <td>Шаблон таблиці
+   </td>
+   <td><a href="https://github.com/tapas-opendata/decreet-835-mun/raw/master/education/territories/addresses/Addresses.xlsx">Addresses.xlsx</a>
+   </td>
+  </tr>
+  <tr>
+   <td>Приклад таблиці
+   </td>
+   <td><a href="https://github.com/tapas-opendata/decreet-835-mun/raw/master/education/territories/addresses/Example.xlsx">Example.xlsx</a>
+   </td>
+  </tr>
+  <tr>
+   <td>Структура (XLSX, CSV, JSON)
+   </td>
+   <td><a href="https://github.com/tapas-opendata/decreet-835-mun/raw/master/education/territories/addresses/Structure.xlsx">Structure.xlsx</a>, <a href="https://raw.githubusercontent.com/tapas-opendata/decreet-835-mun/master/education/territories/addresses/Structure.csv">Structure.csv</a>, <a href="https://raw.githubusercontent.com/tapas-opendata/decreet-835-mun/master/education/territories/addresses/Structure.json">Structure.json</a>
+   </td>
+  </tr>
+</table>
+
+
+
+
+
+<div style="margin-bottom: 25px; background-color:#F4F7FA; padding: 20px"><p><b>Зверніть увагу!</b> Набір необхідно готувати й вести в електронних таблицях Microsoft Excel, LibreOffice Calc або Google Таблицях. Для оприлюднення набору використовуються формати XLSX, ODS, CSV. На портал достатньо завантажити XLSX або ODS книгу, що містить один аркуш. За таких умов ресурс потрапить у базу даних порталу (сховище даних) і його CSV-версія згенерується автоматично. Також дані будуть доступними в форматі JSON через <a href="https://docs.ckan.org/en/latest/maintaining/datastore.html">API порталу</a>.</p></div>
+
+
+<p style="margin-bottom: 10px; text-align: center;"><strong>Таблиця 2 — Структура таблиці (ресурсу) Addresses</strong></p>
+
+<table style="margin-bottom: 30px">
+  <tr>
+   <td><strong>Назва колонки (name)</strong>
+   </td>
+   <td><strong>Заголовок колонки (title)</strong>
+   </td>
+   <td><strong>Опис значень (description)</strong>
+   </td>
+   <td><strong>Тип даних (datatype)</strong>
+   </td>
+   <td><strong>Вимога заповнення (required)</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>identifier
+   </td>
+   <td>Ідентифікатор
+   </td>
+   <td>Унікальним ідентифікатором може бути ідентифікатор адреси з адресного реєстру або будь-яка інша довільна комбінація. Наприклад: lisova-123.
+   </td>
+   <td>Текст (string)
+   </td>
+   <td>Істина (true)
+   </td>
+  </tr>
+  <tr>
+   <td>postCode
+   </td>
+   <td>Поштовий індекс
+   </td>
+   <td>П’ятизначний поштовий індекс адреси. Наприклад: 71890.
+   </td>
+   <td>Текст (string)
+   </td>
+   <td>Істина (true)
+   </td>
+  </tr>
+  <tr>
+   <td>adminUnitL1
+   </td>
+   <td>Країна
+   </td>
+   <td>Назва держави. У колонці має бути зазначено Україна.
+   </td>
+   <td>Текст (string)
+   </td>
+   <td>Істина (true)
+   </td>
+  </tr>
+  <tr>
+   <td>adminUnitL2
+   </td>
+   <td>Регіон
+   </td>
+   <td>Назва регіону. Наприклад: Полтавська область.
+   </td>
+   <td>Текст (string)
+   </td>
+   <td>Істина (true)
+   </td>
+  </tr>
+  <tr>
+   <td>adminUnitL3
+   </td>
+   <td>Район
+   </td>
+   <td>Назва району. Наприклад: Броварський район. У разі відсутності вказати null.
+   </td>
+   <td>Текст (string)
+   </td>
+   <td>Хибність (false)
+   </td>
+  </tr>
+  <tr>
+   <td>postName
+   </td>
+   <td>Населений пункт
+   </td>
+   <td>Назва населеного пункту або назва селищної чи сільської ради. У колонці потрібно зазначати лише назву (без слова «місто», «селищна рада» та їх скорочень «м.» та «с. р.»). Наприклад: Балта.
+   </td>
+   <td>Текст (string)
+   </td>
+   <td>Істина (true)
+   </td>
+  </tr>
+  <tr>
+   <td>thoroughfare
+   </td>
+   <td>Вулиця або аналог
+   </td>
+   <td>Тип та назва площі, майдану, шосе, проспекту, бульвару, алеї, провулку, узвозу тощо, на якому розміщена адреса. Наприклад: вул. Харківська.
+   </td>
+   <td>Текст (string)
+   </td>
+   <td>Істина (true)
+   </td>
+  </tr>
+  <tr>
+   <td>locatorDesignator
+   </td>
+   <td>Номер будівлі	
+   </td>
+   <td>Номер може включати числа та букви. Наприклад: 15-А.
+   </td>
+   <td>Текст (string)
+   </td>
+   <td>Істина (true)
+   </td>
+  </tr>
+  <tr>
+   <td>addressLocatorBuilding
+   </td>
+   <td>Номер корпусу
+   </td>
+   <td>Номер корпусу зазнається числом для об’єктів, які складаються з декількох корпусів. Наприклад: 3. У разі відсутності вказати null.
+   </td>
+   <td>Текст (string)
+   </td>
+   <td>Хибність (false)
+   </td>
+  </tr>
+  <tr>
+   <td>territoryIdentifier
+   </td>
+   <td>Ідентифікатор території
+   </td>
+   <td>Ідентифікатор території обслуговування з таблиці Territories. Наприклад: 5.
+   </td>
+   <td>Текст (string)
+   </td>
+   <td>Істина (true)
+   </td>
+  </tr>
+</table>
+
+
+<h2 style="margin-bottom: 15px; margin-top: 50px;">4. Оформлення паспортів наборів та ресурсів</h2>
+
+
+
+
+
+<div style="margin-bottom: 25px; background-color:#F4F7FA; padding: 20px"><p><b>Зверніть увагу!</b> Назва набору має відповідати Переліку, затвердженому <a href="https://zakon.rada.gov.ua/laws/show/835-2015-%D0%BF">Постановою КМУ № 835 (зі змінами)</a>. Також вона може включати назву розпорядника або населеного пункту, з яким пов'язані дані. Це полегшує пошук набору в пошукових системах.</p></div>
+
+
+<p style="margin-bottom: 10px; text-align: center;"><strong>Таблиця 3 — Приклад паспорта набору даних на data.gov.ua</strong></p>
+
+<table style="margin-bottom: 30px">
+  <tr>
+   <td><strong>Назва поля</strong>
+   </td>
+   <td><strong>Приклад заповнення</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>Назва набору
+   </td>
+   <td>Території обслуговування загальноосвітніх навчальних закладів Дніпровської міської ради
+   </td>
+  </tr>
+  <tr>
+   <td>Відомості про мову інформації, яка міститься у наборі
+   </td>
+   <td>Українська
+   </td>
+  </tr>
+  <tr>
+   <td>Частота оновлення
+   </td>
+   <td>Відразу після внесення змін
+   </td>
+  </tr>
+  <tr>
+   <td>Опис
+   </td>
+   <td>Набір містить два ресурси. Territories — опис територій обслуговування кожного загальноосвітнього навчального закладу. Addresses — віднесення адрес до територій обслуговування.
+   </td>
+  </tr>
+  <tr>
+   <td>Підстава та призначення збору інформації
+   </td>
+   <td>Закон України «Про освіту» від 05.09.2017 № 2145-VIII, Закон України «Про загальну середню освіту» від 13.05.1999 № 651-XIV, Наказ МОН України від 16.04.2018 № 367, Рішення виконавчого комітету Дніпровської міської ради №456 від 11 січня 2019
+   </td>
+  </tr>
+  <tr>
+   <td>Ключові слова
+   </td>
+   <td>освіта, школи, території, середня освіта, заклади освіти, території обслуговування
+   </td>
+  </tr>
+  <tr>
+   <td>Відповідальна особа
+   </td>
+   <td>Симоненко Олена Петрівна
+   </td>
+  </tr>
+  <tr>
+   <td>Адреса електронної пошти відповідальної особи
+   </td>
+   <td>o.symonenko@example.gov.ua
+   </td>
+  </tr>
+</table>
+
+
+<p style="margin-bottom: 10px; text-align: center;"><strong>Таблиця 4 — Приклад паспорта ресурсу Territories </strong></p>
+
+<table style="margin-bottom: 30px">
+  <tr>
+   <td><strong>Назва поля</strong>
+   </td>
+   <td><strong>Приклад заповнення</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>Назва ресурсу
+   </td>
+   <td>Territories.xlsx
+   </td>
+  </tr>
+  <tr>
+   <td>Опис
+   </td>
+   <td>Таблиця містить ідентифікатори й описи територій обслуговування закладів загальної середньої освіти, що затверджені Рішенням виконавчого комітету Дніпровської міської ради «Про закріплення території обслуговування за закладами дошкільної та загальної середньої освіти» №456 від 11 січня 2019. Кожним записом у таблиці є одна територія обслуговування.
+   </td>
+  </tr>
+  <tr>
+   <td>Формат
+   </td>
+   <td>XLSX
+   </td>
+  </tr>
+</table>
+
+
+<p style="margin-bottom: 10px; text-align: center;"><strong>Таблиця 5 — Приклад паспорта ресурсу Addresses</strong></p>
+
+<table style="margin-bottom: 30px">
+  <tr>
+   <td><strong>Назва поля</strong>
+   </td>
+   <td><strong>Приклад заповнення</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>Назва ресурсу
+   </td>
+   <td>Addresses.xlsx
+   </td>
+  </tr>
+  <tr>
+   <td>Опис
+   </td>
+   <td>Таблиця містить адреси будинків та ідентифікатори територій обслуговування закладів загальної середньої освіти, до яких вони закріплені. Кожним записом у таблиці є одна адреса.
+   </td>
+  </tr>
+  <tr>
+   <td>Формат
+   </td>
+   <td>XLSX
+   </td>
+  </tr>
+</table>
+
