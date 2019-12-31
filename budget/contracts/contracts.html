@@ -1,0 +1,867 @@
+<!-----
+
+Перелік укладених договорів (укладені договори, інші правочини, додатки, додаткові угоди та інші матеріали до них)
+https://data.gov.ua/pages/835-recm-budget-contracts
+
+----->
+
+
+
+<h2 style="margin-bottom: 15px; margin-top: 50px;">1. Коротка довідка</h2>
+
+
+
+<table style="margin-bottom: 30px">
+  <tr>
+   <td><strong>Критерій</strong>
+   </td>
+   <td><strong>Характеристика</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>Нормативно-правові акти, які визначають створення, збір, зберігання, використання й поширення даних
+   </td>
+   <td><a href="https://zakon.rada.gov.ua/laws/show/183-19">Закон України «Про відкритість використання публічних коштів» від 11.02.2015 № 183-VIII</a>, <a href="https://zakon.rada.gov.ua/laws/show/922-19">Закон України «Про публічні закупівлі» від 25.12.2015 № 922-VIII</a>, <a href="https://zakon.rada.gov.ua/laws/show/2269-12">Закон України «Про оренду державного та комунального майна» від 10.04.1992 № 2269-XII</a>, <a href="https://zakon.rada.gov.ua/laws/show/2768-14">Земельний кодекс України</a> та інші нормативно-правові акти.
+   </td>
+  </tr>
+  <tr>
+   <td>Інформація, що створюється, збирається, зберігається й поширюється
+   </td>
+   <td>Органи місцевого самоврядування здійснюють облік та оприлюднення договорів відповідно до профільного законодавства: Закону України «Про відкритість використання публічних коштів», Закону України «Про публічні закупівлі» та інших нормативно-правових актів.
+   </td>
+  </tr>
+  <tr>
+   <td>Способи оновлення
+   </td>
+   <td>Укладення, внесення змін, скасування договорів, укладення додаткових угод та інших правочинів, складення актів тощо.
+   </td>
+  </tr>
+  <tr>
+   <td>Частота оновлення інформації
+   </td>
+   <td>Позапланово (протягом трьох робочих днів з моменту внесення змін)
+   </td>
+  </tr>
+  <tr>
+   <td>Тип даних
+   </td>
+   <td>Структуровані
+   </td>
+  </tr>
+  <tr>
+   <td>Формати файлів
+   </td>
+   <td>XLSX, ODS, CSV, JSON можливі інші формати структурованих даних
+   </td>
+  </tr>
+</table>
+
+
+<h2 style="margin-bottom: 15px; margin-top: 50px;">2. Огляд нормативно-правової бази</h2>
+
+<p style="margin-bottom: 25px">
+Облік та оприлюднення даних про договори відбувається відповідно до положень профільного законодавства, зокрема, <a href="https://zakon.rada.gov.ua/laws/show/183-19">Закону України «Про відкритість використання публічних коштів»</a>, <a href="https://zakon.rada.gov.ua/laws/show/922-19">Закону України «Про публічні закупівлі»</a>, <a href="https://zakon.rada.gov.ua/laws/show/2269-12">Закону України «Про оренду державного та комунального майна»</a>, <a href="https://zakon.rada.gov.ua/laws/show/2768-14">Земельного кодексу України</a>, <a href="https://zakon.rada.gov.ua/laws/show/270/96-%D0%B2%D1%80">Закон України «Про рекламу» від 03.07.1996 № 270/96-ВР</a> та інших нормативно-правових актів.
+</p>
+<h2 style="margin-bottom: 15px; margin-top: 50px;">3. Підготовка даних та структура набору</h2>
+
+<h3 style="margin-bottom: 15px; margin-top: 30px;">3.1. Дані про договори щодо використання публічних коштів</h3>
+
+
+<p style="margin-bottom: 25px">
+Більшість договорів органів місцевого самоврядування стосуються використання публічних коштів і підлягають оприлюдненню на Єдиному веб-порталі використання публічних коштів (<a href="https://spending.gov.ua/">Spending.gov.ua</a>) та в Єдиній системі електронних публічних закупівель ПроЗорро (<a href="https://prozorro.gov.ua/">Prozorro.gov.ua</a>). Тому дублювати ці дані в окремому переліку недоцільно. Натомість набагато ефективніше оприлюднити їх через API (інтерфейс прикладного програмування) <a href="https://spending.gov.ua/">Spending.gov.ua</a> у форматі JSON. Для цього необхідно сформувати посилання (кінцеву точку), за яким користувачі зможуть отримати дані певного розпорядника з бази даних порталу. Наприклад, для отримання переліку договорів посилання матиме вигляд:
+</p>
+<pre style="margin-bottom: 25px; padding: 10px"><code><p>http://api.spending.gov.ua/api/v2/disposers/contracts?disposerId=<strong>ЄДРПОУ Розпорядника</strong>
+</pre></code>
+
+<p style="margin-bottom: 25px">
+Останню частину (ЄДРПОУ Розпорядника) необхідно замінити на 8 чисел коду ЄДРПОУ розпорядника бюджетних коштів. Наприклад, у випадку Дніпровської міської ради (код ЄДРПОУ — 26510514) посилання буде наступним:
+</p>
+
+<pre style="margin-bottom: 25px; padding: 10px"><code><p>http://api.spending.gov.ua/api/v2/disposers/contracts?disposerId=26510514
+</pre></code>
+
+<p style="margin-bottom: 25px">
+Якщо скопіювати його в адресний рядок веб-переглядача (Google Chrome або Mozilla Firefox) і натиснути перейти, то можна отримати дані у форматі JSON. Перше число "size":471 вказує на загальну кількість доступних документів.
+</p>
+
+<p style="margin-bottom: 10px; text-align: center;"><strong>Рисунок 1 — Приклад даних spending.gov.ua у форматі JSON</strong></p>
+
+<img src="https://raw.githubusercontent.com/tapas-opendata/decreet-835-mun/master/img/spending-sample.png" width="75%" alt="Приклад даних spending.gov.ua у форматі JSON">
+
+<p style="margin-bottom: 25px">Для отримання різних типів документів у <a href="https://spending.gov.ua/">Spending.gov.ua</a> використовуються різні кінцеві точки (див. Таблицю 1).</p>
+
+<p style="margin-bottom: 10px; text-align: center;"><strong>Таблиця 1 — Посилання (кінцеві точки) для отримання даних </strong></p>
+
+<table style="margin-bottom: 30px">
+  <tr>
+   <td><strong>Назва</strong>
+   </td>
+   <td><strong>Шаблон посилання (кінцевої точки)</strong>
+   </td>
+   <td><strong>Приклад посилання (кінцевої точки)</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>Перелік договорів
+   </td>
+   <td><p>http://api.spending.gov.ua/api/v2/disposers/contracts?disposerId=<strong>ЄДРПОУ</strong></p>
+   </td>
+   <td><p>http://api.spending.gov.ua/api/v2/disposers/contracts?disposerId=04051327</p>
+  </tr>
+  <tr>
+   <td>Перелік додаткових угод 
+   </td>
+   <td><p>http://api.spending.gov.ua/api/v2/disposers/addendums?disposerId=<strong>ЄДРПОУ</strong></p>
+   </td>
+   <td><p>http://api.spending.gov.ua/api/v2/disposers/addendums?disposerId=04051327</p>
+  </tr>
+  <tr>
+   <td>Перелік актів/накладних до договорів
+   </td>
+   <td><p>http://api.spending.gov.ua/api/v2/disposers/acts?disposerId=<strong>ЄДРПОУ</strong></p>
+   </td>
+   <td><p>http://api.spending.gov.ua/api/v2/disposers/acts?disposerId=04051327</p>
+   </td>
+  </tr>
+  <tr>
+   <td>Перелік штрафів до договорів
+   </td>
+   <td><p>http://api.spending.gov.ua/api/v2/disposers/peny?disposerId=<strong>ЄДРПОУ</strong></p>
+   </td>
+   <td><p>http://api.spending.gov.ua/api/v2/disposers/peny?disposerId=04051327</p>
+   </td>
+  </tr>
+</table>
+
+
+<h3 style="margin-bottom: 15px; margin-top: 30px;">3.2. Дані про інші договори</h3>
+
+
+<p style="margin-bottom: 25px">
+У випадку оприлюднення даних про інші типи договорів, наприклад, розміщення тимчасових споруд, рекламних засобів тощо рекомендовано використовувати структури наступних ресурсів
+</p>
+<ol style="margin-left: 30px">
+
+<li style="margin-bottom: 10px;"><strong>Contracts</strong> — перелік договорів;
+
+<li style="margin-bottom: 10px;"><strong>AdditionalDocuments</strong> — перелік додаткових угод та інших документів.
+</li>
+</ol>
+<h4 style="margin-bottom: 15px; margin-top: 30px;">3.2.1. Перелік договорів (ресурс Contracts)</h4>
+
+
+
+<table style="margin-bottom: 30px">
+  <tr>
+   <td colspan="2" ><strong><center>Інформація про ресурс</center></strong>
+   </td>
+  </tr>
+  <tr>
+   <td>Назва ресурсу
+   </td>
+   <td>Contracts
+   </td>
+  </tr>
+  <tr>
+   <td>Що є одним записом в таблиці (рядком)
+   </td>
+   <td>Один договір
+   </td>
+  </tr>
+  <tr>
+   <td>Спосіб оновлення
+   </td>
+   <td>Розміщення нової версії ресурсу, можливе створення нового ресурсу щомісяця, щокварталу, щороку
+   </td>
+  </tr>
+  <tr>
+   <td colspan="2" ><strong><center>Прикріплені файли</center></strong>
+   </td>
+  </tr>
+  <tr>
+   <td>Шаблон таблиці
+   </td>
+   <td><a href="https://github.com/tapas-opendata/decreet-835-mun/raw/master/budget/contracts/contracts/Сontracts.xlsx">Contracts.xlsx</a>
+   </td>
+  </tr>
+  <tr>
+   <td>Приклад таблиці
+   </td>
+   <td><a href="https://github.com/tapas-opendata/decreet-835-mun/raw/master/budget/contracts/contracts/Example.xlsx">Example.xlsx</a>
+   </td>
+  </tr>
+  <tr>
+   <td>Структура (XLSX, CSV, JSON)
+   </td>
+   <td><a href="https://github.com/tapas-opendata/decreet-835-mun/raw/master/budget/contracts/contracts/Structure.xlsx">Structure.xlsx</a>, <a href="https://raw.githubusercontent.com/tapas-opendata/decreet-835-mun/master/budget/contracts/contracts/Structure.csv">Structure.csv</a>, <a href="https://raw.githubusercontent.com/tapas-opendata/decreet-835-mun/master/budget/contracts/contracts/Structure.json">Structure.json</a>
+   </td>
+  </tr>
+</table>
+
+
+
+
+
+<div style="margin-bottom: 25px; background-color:#F4F7FA; padding: 20px"><p><b>Зверніть увагу!</b> Набір необхідно готувати й вести в електронних таблицях Microsoft Excel, LibreOffice Calc або Google Таблицях. Для оприлюднення набору використовуються формати XLSX, ODS, CSV. На портал достатньо завантажити XLSX або ODS книгу, що містить один аркуш. За таких умов ресурс потрапить у базу даних порталу (сховище даних) і його CSV-версія згенерується автоматично. Також дані будуть доступними в форматі JSON через <a href="https://docs.ckan.org/en/latest/maintaining/datastore.html">API порталу</a>.</p></div>
+
+
+<p style="margin-bottom: 10px; text-align: center;"><strong>Таблиця 1 — Структура таблиці (ресурсу) Contracts</strong></p>
+
+<table style="margin-bottom: 30px">
+  <tr>
+   <td><strong>Назва колонки (name)</strong>
+   </td>
+   <td><strong>Заголовок колонки (title)</strong>
+   </td>
+   <td><strong>Опис значень (description)</strong>
+   </td>
+   <td><strong>Тип даних (datatype)</strong>
+   </td>
+   <td><strong>Вимога заповнення (required)</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>id
+   </td>
+   <td>Ідентифікатор
+   </td>
+   <td>Унікальним ідентифікатором договору є рік його підписання та номер, що розділені знаком дефіс. Наприклад: 2018-345/п. Розпорядники можуть використовувати власні ідентифікатори.
+   </td>
+   <td>Текст (string)
+   </td>
+   <td>Істина (true)
+   </td>
+  </tr>
+  <tr>
+   <td>number
+   </td>
+   <td>Номер договору
+   </td>
+   <td>Номер договору (без знаку «№»). Наприклад: 345/п.
+   </td>
+   <td>Текст (string)
+   </td>
+   <td>Істина (true)
+   </td>
+  </tr>
+  <tr>
+   <td>dateSigned
+   </td>
+   <td>Дата підписання
+   </td>
+   <td>Дата підписання договору у форматі ISO 8601 (рррр-мм-дд). Наприклад: 2019-05-30.
+   </td>
+   <td>Дата (date)
+   </td>
+   <td>Істина (true)
+   </td>
+  </tr>
+  <tr>
+   <td>supplierName
+   </td>
+   <td>Ім'я або назва контрагента
+   </td>
+   <td>Назва юридичної особи контрагента або прізвище, ім’я, по батькові ФОП. Наприклад: ТОВ «Реклама-плюс».
+   </td>
+   <td>Текст (string)
+   </td>
+   <td>Істина (true)
+   </td>
+  </tr>
+  <tr>
+   <td>supplierID
+   </td>
+   <td>Ідентифікатор контрагента
+   </td>
+   <td>Код ЄДРПОУ юридичної особи контрагента. У випадку ФОП дані про РНОКПП знеособлюються. Наприклад: 01234567.
+   </td>
+   <td>Текст (string)
+   </td>
+   <td>Істина (true)
+   </td>
+  </tr>
+  <tr>
+   <td>disposerName
+   </td>
+   <td>Назва органу
+   </td>
+   <td>Назва розпорядника, який є стороною договору. Наприклад: Виконавчий комітет Вінницької міської ради.
+   </td>
+   <td>Текст (string)
+   </td>
+   <td>Істина (true)
+   </td>
+  </tr>
+  <tr>
+   <td>disposerID
+   </td>
+   <td>Ідентифікатор органу
+   </td>
+   <td>Код ЄДРПОУ розпорядника, який є стороною договору. Наприклад: 01234567.
+   </td>
+   <td>Текст (string)
+   </td>
+   <td>Істина (true)
+   </td>
+  </tr>
+  <tr>
+   <td>description
+   </td>
+   <td>Опис
+   </td>
+   <td>Опис предмета договору. Наприклад: Розміщення рекламних засобів за адресою вул. Марка Кропивницького 19.
+   </td>
+   <td>Текст (string)
+   </td>
+   <td>Істина (true)
+   </td>
+  </tr>
+  <tr>
+   <td>periodStartDate
+   </td>
+   <td>Початок дії
+   </td>
+   <td>Дата початку дії договору у форматі ISO 8601 (рррр-мм-дд). Наприклад: 2018-07-06.
+   </td>
+   <td>Дата (date)
+   </td>
+   <td>Істина (true)
+   </td>
+  </tr>
+  <tr>
+   <td>periodEndDate
+   </td>
+   <td>Завершення дії
+   </td>
+   <td>Дата завершення дії договору у форматі ISO 8601 (рррр-мм-дд). Наприклад: 2018-09-06.
+   </td>
+   <td>Дата (date)
+   </td>
+   <td>Істина (true)
+   </td>
+  </tr>
+  <tr>
+   <td>valueAmount
+   </td>
+   <td>Сума договору
+   </td>
+   <td>Загальна сума договору. Число вказується без зазначення валюти («грн», «UAH»). Наприклад: 3000. Десяткові значення відділяються крапкою або комою. Потрібно дотримуватися одного розділювача для всієї таблиці.
+   </td>
+   <td>Десятковий дріб (decimal)
+   </td>
+   <td>Істина (true)
+   </td>
+  </tr>
+  <tr>
+   <td>valueCurrency
+   </td>
+   <td>Валюта
+   </td>
+   <td>Буквений код валюти, в якій виражена сума, відповідно до ДСТУ ISO 4217 (<a href="https://zakon.rada.gov.ua/rada/show/v0416832-14/conv">https://zakon.rada.gov.ua/rada/show/v0416832-14/conv</a>). Наприклад: UAH.
+   </td>
+   <td>Текст (string)
+   </td>
+   <td>Істина (true)
+   </td>
+  </tr>
+  <tr>
+   <td>status
+   </td>
+   <td>Статус	 договору
+   </td>
+   <td>Статус договору може мати одне зі значень: Чинний, Виконаний, Розірваний, Скасований. Наприклад: Чинний.
+   </td>
+   <td>Текст (string)
+   </td>
+   <td>Істина (true)
+   </td>
+  </tr>
+  <tr>
+   <td>url
+   </td>
+   <td>Посилання
+   </td>
+   <td>Посилання на перегляд або завантаження договору включно з усіма додатками. Посилання має починатися з http:// або https://. Наприклад: https://www.example.gov.ua/contract-345.doc.
+   </td>
+   <td>Посилання (anyURI)
+   </td>
+   <td>Істина (true)
+   </td>
+  </tr>
+</table>
+
+
+<h4 style="margin-bottom: 15px; margin-top: 30px;">3.2.2. Перелік додаткових угод та інших документів (ресурс AdditionalDocuments)</h4>
+
+
+
+<table style="margin-bottom: 30px">
+  <tr>
+   <td colspan="2" ><strong><center>Інформація про ресурс</center></strong>
+   </td>
+  </tr>
+  <tr>
+   <td>Назва ресурсу
+   </td>
+   <td>AdditionalDocuments
+   </td>
+  </tr>
+  <tr>
+   <td>Що є одним записом в таблиці (рядком)
+   </td>
+   <td>Один документ
+   </td>
+  </tr>
+  <tr>
+   <td>Спосіб оновлення
+   </td>
+   <td>Розміщення нової версії ресурсу, можливе створення нового ресурсу щомісяця, щокварталу, щороку
+   </td>
+  </tr>
+  <tr>
+   <td colspan="2" ><strong><center>Прикріплені файли</center></strong>
+   </td>
+  </tr>
+  <tr>
+   <td>Шаблон таблиці
+   </td>
+   <td><a href="https://github.com/tapas-opendata/decreet-835-mun/raw/master/budget/contracts/additional-documents/AdditionalDocuments.xlsx">AdditionalDocuments.xlsx</a>
+   </td>
+  </tr>
+  <tr>
+   <td>Приклад таблиці
+   </td>
+   <td><a href="https://github.com/tapas-opendata/decreet-835-mun/raw/master/budget/contracts/additional-documents/Example.xlsx">Example.xlsx</a>
+   </td>
+  </tr>
+  <tr>
+   <td>Структура (XLSX, CSV, JSON)
+   </td>
+   <td><a href="https://github.com/tapas-opendata/decreet-835-mun/raw/master/budget/contracts/additional-documents/Structure.xlsx">Structure.xlsx</a>, <a href="https://raw.githubusercontent.com/tapas-opendata/decreet-835-mun/master/budget/contracts/additional-documents/Structure.csv">Structure.csv</a>, <a href="https://raw.githubusercontent.com/tapas-opendata/decreet-835-mun/master/budget/contracts/additional-documents/Structure.json">Structure.json</a>
+   </td>
+  </tr>
+</table>
+
+
+<p style="margin-bottom: 10px; text-align: center;"><strong>Таблиця 2 — Структура таблиці (ресурсу) AdditionalDocuments</strong></p>
+
+<table style="margin-bottom: 30px">
+  <tr>
+   <td><strong>Назва колонки (name)</strong>
+   </td>
+   <td><strong>Заголовок колонки (title)</strong>
+   </td>
+   <td><strong>Опис значень (description)</strong>
+   </td>
+   <td><strong>Тип даних (datatype)</strong>
+   </td>
+   <td><strong>Вимога заповнення (required)</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>id
+   </td>
+   <td>Ідентифікатор документа
+   </td>
+   <td>Унікальним ідентифікатором документа є ідентифікатор основної угоди з таблиці Contracts (колонка id) та номер документа, що розділені знаком дефіс. Наприклад: 2018-345/п-1. Розпорядники можуть використовувати власні ідентифікатори.
+   </td>
+   <td>Текст (string)
+   </td>
+   <td>Істина (true)
+   </td>
+  </tr>
+  <tr>
+   <td>contractID
+   </td>
+   <td>Ідентифікатор основного договору
+   </td>
+   <td>Ідентифікатор основної угоди з таблиці Contracts (колонка id). Наприклад: 2018-345/п.
+   </td>
+   <td>Текст (string)
+   </td>
+   <td>Істина (true)
+   </td>
+  </tr>
+  <tr>
+   <td>number
+   </td>
+   <td>Номер
+   </td>
+   <td>Номер документа (без знаку «№»). Наприклад: 1.
+   </td>
+   <td>Текст (string)
+   </td>
+   <td>Істина (true)
+   </td>
+  </tr>
+  <tr>
+   <td>dateSigned
+   </td>
+   <td>Дата підписання
+   </td>
+   <td>Дата підписання документа у форматі ISO 8601 (рррр-мм-дд). Наприклад: 2014-05-30.
+   </td>
+   <td>Дата (date)
+   </td>
+   <td>Істина (true)
+   </td>
+  </tr>
+  <tr>
+   <td>type
+   </td>
+   <td>Тип
+   </td>
+   <td>Тип документа: Акт, Додаткова угода, Протокол, тощо. Наприклад: Додаткова угода.
+   </td>
+   <td>Текст (string)
+   </td>
+   <td>Істина (true)
+   </td>
+  </tr>
+  <tr>
+   <td>title
+   </td>
+   <td>Назва
+   </td>
+   <td>Повна назва документа. Наприклад: Додаткова угода №1 до Договору №345/п.
+   </td>
+   <td>Текст (string)
+   </td>
+   <td>Істина (true)
+   </td>
+  </tr>
+  <tr>
+   <td>description
+   </td>
+   <td>Опис
+   </td>
+   <td>Короткий опис змісту документа. Наприклад: Додатковою угодою продовжений строк дії Договору до 31 грудня 2019 року, але в будь-якому разі до повного виконання сторонами своїх зобов’язань.
+   </td>
+   <td>Текст (string)
+   </td>
+   <td>Істина (true)
+   </td>
+  </tr>
+  <tr>
+   <td>url
+   </td>
+   <td>Посилання
+   </td>
+   <td>Посилання на перегляд або завантаження документа. Посилання має починатися з http:// або https://. Наприклад: https://www.example.gov.ua/contract-345.doc.
+   </td>
+   <td>Посилання (anyURI)
+   </td>
+   <td>Істина (true)
+   </td>
+  </tr>
+</table>
+
+
+<h3 style="margin-bottom: 15px; margin-top: 30px;">3.3. Публікація текстів договорів на порталі</h3>
+
+
+<p style="margin-bottom: 25px">
+Оскільки тексти договорів не є машиночитаними, їх рекомендовано розміщувати в одному архіві даних (ресурсі) на порталах. Не допускається публікація текстів у форматі сканованих зображень (TIFF, JPEG, PNG тощо) або PDF-документів. Для архівів даних рекомендовано використовувати формати ZIP, 7z.
+</p>
+<h2 style="margin-bottom: 15px; margin-top: 50px;">4. Оформлення паспортів наборів та ресурсів</h2>
+
+
+
+
+
+<div style="margin-bottom: 25px; background-color:#F4F7FA; padding: 20px"><p><b>Зверніть увагу!</b> Назва набору має відповідати Переліку, затвердженому <a href="https://zakon.rada.gov.ua/laws/show/835-2015-%D0%BF">Постановою КМУ № 835 (зі змінами)</a>. Також вона може включати назву розпорядника або населеного пункту, з яким пов'язані дані. Це полегшує пошук набору в пошукових системах.</p></div>
+
+
+<p style="margin-bottom: 10px; text-align: center;"><strong>Таблиця 3 — Приклад паспорта набору даних на data.gov.ua</strong></p>
+
+<table style="margin-bottom: 30px">
+  <tr>
+   <td><strong>Назва поля</strong>
+   </td>
+   <td><strong>Приклад заповнення</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>Назва набору
+   </td>
+   <td>Перелік укладених договорів Виконавчого комітету Луцької міської ради
+   </td>
+  </tr>
+  <tr>
+   <td>Відомості про мову інформації, яка міститься у наборі
+   </td>
+   <td>Українська
+   </td>
+  </tr>
+  <tr>
+   <td>Частота оновлення
+   </td>
+   <td>Один раз на квартал
+   </td>
+  </tr>
+  <tr>
+   <td>Опис
+   </td>
+   <td>Набір містить перелік укладених договорів, укладені договори, інші правочини, додатки, додаткові угоди та інші матеріали до них. Ресурси Contracts, Addendums, Acts, Peny містять інформацію з Єдиного веб-порталу використання публічних фінансів (spending.gov.ua). Тексти угод розмішені в ресурсі Texts.
+   </td>
+  </tr>
+  <tr>
+   <td>Підстава та призначення збору інформації
+   </td>
+   <td>Закон України «Про відкритість використання публічних коштів» від 11.02.2015 № 183-VIII, Закон України «Про публічні закупівлі» від 25.12.2015 № 922-VIII
+   </td>
+  </tr>
+  <tr>
+   <td>Ключові слова
+   </td>
+   <td>договір, угода, акт, штраф, пеня, додаткова угода, додаток, товари, послуги
+   </td>
+  </tr>
+  <tr>
+   <td>Відповідальна особа
+   </td>
+   <td>Симоненко Олена Петрівна
+   </td>
+  </tr>
+  <tr>
+   <td>Адреса електронної пошти відповідальної особи
+   </td>
+   <td>o.symonenko@example.gov.ua
+   </td>
+  </tr>
+</table>
+
+
+<p style="margin-bottom: 10px; text-align: center;"><strong>Таблиця 4 — Приклад додавання ресурсу Contracts</strong></p>
+
+<table style="margin-bottom: 30px">
+  <tr>
+   <td><strong>Назва поля</strong>
+   </td>
+   <td><strong>Приклад заповнення</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>Посилання
+   </td>
+   <td><a href="http://api.spending.gov.ua/api/v2/disposers/contracts?disposerId=04051327">http://api.spending.gov.ua/api/v2/disposers/contracts?disposerId=04051327</a>
+   </td>
+  </tr>
+  <tr>
+   <td>Назва ресурсу
+   </td>
+   <td>Contracts
+   </td>
+  </tr>
+  <tr>
+   <td>Опис
+   </td>
+   <td>Перелік договорів оприлюднених на Єдиному веб-порталі використання публічних фінансів (spending.gov.ua). Довідка щодо використання API spending.gov.ua доступна за посиланням — <a href="https://confluence.spending.gov.ua/">https://confluence.spending.gov.ua/</a>.
+   </td>
+  </tr>
+  <tr>
+   <td>Формат
+   </td>
+   <td>API
+   </td>
+  </tr>
+</table>
+
+
+<p style="margin-bottom: 10px; text-align: center;"><strong>Таблиця 5 — Приклад додавання ресурсу Addendums</strong></p>
+
+<table style="margin-bottom: 30px">
+  <tr>
+   <td><strong>Назва поля</strong>
+   </td>
+   <td><strong>Приклад заповнення</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>Посилання
+   </td>
+   <td><a href="http://api.spending.gov.ua/api/v2/disposers/addendums?disposerId=04051327">http://api.spending.gov.ua/api/v2/disposers/addendums?disposerId=04051327</a>
+   </td>
+  </tr>
+  <tr>
+   <td>Назва ресурсу
+   </td>
+   <td>Addendums
+   </td>
+  </tr>
+  <tr>
+   <td>Опис
+   </td>
+   <td>Перелік додаткових угод оприлюднених на Єдиному веб-порталі використання публічних фінансів (spending.gov.ua). Довідка щодо використання API spending.gov.ua доступна за посиланням — <a href="https://confluence.spending.gov.ua/">https://confluence.spending.gov.ua/</a>.
+   </td>
+  </tr>
+  <tr>
+   <td>Формат
+   </td>
+   <td>API
+   </td>
+  </tr>
+</table>
+
+
+<p style="margin-bottom: 10px; text-align: center;"><strong>Таблиця 6 — Приклад додавання ресурсу Acts</strong></p>
+
+<table style="margin-bottom: 30px">
+  <tr>
+   <td><strong>Назва поля</strong>
+   </td>
+   <td><strong>Приклад заповнення</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>Посилання
+   </td>
+   <td><a href="http://api.spending.gov.ua/api/v2/disposers/acts?disposerId=04051327">http://api.spending.gov.ua/api/v2/disposers/acts?disposerId=04051327</a>
+   </td>
+  </tr>
+  <tr>
+   <td>Назва ресурсу
+   </td>
+   <td>Acts
+   </td>
+  </tr>
+  <tr>
+   <td>Опис
+   </td>
+   <td>Перелік актів до договорів оприлюднених на Єдиному веб-порталі використання публічних фінансів (spending.gov.ua). Довідка щодо використання API spending.gov.ua доступна за посиланням — <a href="https://confluence.spending.gov.ua/">https://confluence.spending.gov.ua/</a>.
+   </td>
+  </tr>
+  <tr>
+   <td>Формат
+   </td>
+   <td>API
+   </td>
+  </tr>
+</table>
+
+
+<p style="margin-bottom: 10px; text-align: center;"><strong>Таблиця 7 — Приклад додавання ресурсу Peny</strong></p>
+
+<table style="margin-bottom: 30px">
+  <tr>
+   <td><strong>Назва поля</strong>
+   </td>
+   <td><strong>Приклад заповнення</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>Посилання
+   </td>
+   <td><a href="http://api.spending.gov.ua/api/v2/disposers/peny?disposerId=04051327">http://api.spending.gov.ua/api/v2/disposers/peny?disposerId=04051327</a>
+   </td>
+  </tr>
+  <tr>
+   <td>Назва ресурсу
+   </td>
+   <td>Peny
+   </td>
+  </tr>
+  <tr>
+   <td>Опис
+   </td>
+   <td>Перелік штрафів до договорів оприлюднених на Єдиному веб-порталі використання публічних фінансів (spending.gov.ua). Довідка щодо використання API spending.gov.ua доступна за посиланням — <a href="https://confluence.spending.gov.ua/">https://confluence.spending.gov.ua/</a>.
+   </td>
+  </tr>
+  <tr>
+   <td>Формат
+   </td>
+   <td>API
+   </td>
+  </tr>
+</table>
+
+
+<p style="margin-bottom: 10px; text-align: center;"><strong>Таблиця 8 — Приклад паспорта ресурсу Contracts</strong></p>
+
+<table style="margin-bottom: 30px">
+  <tr>
+   <td><strong>Назва поля</strong>
+   </td>
+   <td><strong>Приклад заповнення</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>Назва ресурсу
+   </td>
+   <td>Contracts.xlsx
+   </td>
+  </tr>
+  <tr>
+   <td>Опис
+   </td>
+   <td>Таблиця містить дані про договори, зокрема, номер, дату підписання, найменування та ідентифікатори сторін, опис умов, строки реалізації, посилання на копію, що оприлюднена в мережі Інтернет. Кожним записом до таблиці є один договір.
+   </td>
+  </tr>
+  <tr>
+   <td>Формат
+   </td>
+   <td>XLSX
+   </td>
+  </tr>
+</table>
+
+
+<p style="margin-bottom: 10px; text-align: center;"><strong>Таблиця 9 — Приклад паспорта ресурсу AdditionalDocuments</strong></p>
+
+<table style="margin-bottom: 30px">
+  <tr>
+   <td><strong>Назва поля</strong>
+   </td>
+   <td><strong>Приклад заповнення</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>Назва ресурсу
+   </td>
+   <td>AdditionalDocuments.xlsx
+   </td>
+  </tr>
+  <tr>
+   <td>Опис
+   </td>
+   <td>Таблиця містить перелік додаткових угод та інших документів (протоколів, актів тощо). Зокрема, реквізити основного договору, номер документа, дату підписання, тип, назву, опис, посилання на копію, що оприлюднена в мережі Інтернет. Кожним записом до таблиці є одна додаткова угода або інший документ.
+   </td>
+  </tr>
+  <tr>
+   <td>Формат
+   </td>
+   <td>XLSX
+   </td>
+  </tr>
+</table>
+
+
+<p style="margin-bottom: 10px; text-align: center;"><strong>Таблиця 10 — Приклад додавання ресурсу Texts</strong></p>
+
+<table style="margin-bottom: 30px">
+  <tr>
+   <td><strong>Назва поля</strong>
+   </td>
+   <td><strong>Приклад заповнення</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>Назва ресурсу
+   </td>
+   <td>Texts.zip
+   </td>
+  </tr>
+  <tr>
+   <td>Опис
+   </td>
+   <td>Архів даних текстів договорів, інших правочинів, додатків, додаткових угод та інших матеріалів до них.
+   </td>
+  </tr>
+  <tr>
+   <td>Формат
+   </td>
+   <td>ZIP
+   </td>
+  </tr>
+</table>
+
