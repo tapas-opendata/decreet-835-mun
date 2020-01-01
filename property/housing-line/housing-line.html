@@ -1,0 +1,767 @@
+<!-----
+
+Дані обліку громадян, які потребують поліпшення житлових умов (квартирний облік)
+https://data.gov.ua/pages/835-recm-property-housing-line
+
+----->
+
+
+<h2 style="margin-bottom: 15px; margin-top: 50px;">1. Коротка довідка</h2>
+
+
+
+<table style="margin-bottom: 30px">
+  <tr>
+   <td><strong>Критерій</strong>
+   </td>
+   <td><strong>Характеристика</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>Нормативно-правові акти, які визначають створення, збір, зберігання, використання й поширення даних
+   </td>
+   <td><a href="https://zakon.rada.gov.ua/laws/show/5464-10">Житловий Кодекс України</a>, <a href="https://zakon.rada.gov.ua/laws/show/280/97-%D0%B2%D1%80">Закон України «Про місцеве самоврядування в Україні»  від 21.05.1997 № 280/97-ВР</a>, <a href="https://zakon.rada.gov.ua/laws/show/470-84-%D0%BF">Постанова Ради Міністрів УРСР «Про затвердження Правил обліку громадян, які потребують поліпшення житлових умов, і надання їм жилих приміщень в Українській РСР» від 11.12.1984 № 470 (зі змінами)</a>, нормативно правові акти органів місцевого самоврядування
+   </td>
+  </tr>
+  <tr>
+   <td>Інформація, що створюється, збирається, зберігається й поширюється
+   </td>
+   <td>Дані обліку громадян, які потребують поліпшення житлових умов, вносяться до книг та списків затверджених Постановою Ради Міністрів УРСР від 11.12.1984 № 470.
+   </td>
+  </tr>
+  <tr>
+   <td>Способи оновлення
+   </td>
+   <td>Взяття на облік, виключення з обліку, актуалізація даних, включення особи до списків осіб, що користуються правом першочергового або позачергового одержання жилих приміщень, надання житла.
+   </td>
+  </tr>
+  <tr>
+   <td>Частота оновлення інформації
+   </td>
+   <td>Позапланово (протягом трьох робочих днів з моменту внесення змін)
+   </td>
+  </tr>
+  <tr>
+   <td>Тип даних
+   </td>
+   <td>Структуровані
+   </td>
+  </tr>
+  <tr>
+   <td>Формати файлів
+   </td>
+   <td>XLSX, ODS, CSV, можливі інші формати структурованих даних
+   </td>
+  </tr>
+</table>
+
+
+<h2 style="margin-bottom: 15px; margin-top: 50px;">2. Огляд нормативно-правової бази</h2>
+
+
+<p style="margin-bottom: 25px">
+Відповідно до статті 36 <a href="https://zakon.rada.gov.ua/laws/show/5464-10">Житлового кодексу України</a> облік громадян, які потребують поліпшення житлових умов, проводиться виконавчими органами місцевих рад. <a href="https://zakon.rada.gov.ua/laws/show/470-84-%D0%BF">Постановою Ради Міністрів УРСР від 11.12.1984 № 470 (зі змінами)</a> затверджені Правила обліку громадян, які потребують поліпшення житлових умов, форми книг та списків (додаток 1-6).
+</p>
+<h2 style="margin-bottom: 15px; margin-top: 50px;">3. Підготовка даних та структура набору</h2>
+
+
+<p style="margin-bottom: 25px">
+Відповідно до Порядку, затвердженого <a href="https://zakon.rada.gov.ua/laws/show/470-84-%D0%BF">Постановою Ради Міністрів УРСР від 11.12.1984 № 470</a>, набір включає три ресурси:
+</p>
+<ol style="margin-left: 30px">
+
+<li style="margin-bottom: 10px;"><strong>Line</strong> — книга обліку осіб, які перебувають на черзі на одержання жилих приміщень;
+
+<li style="margin-bottom: 10px;"><strong>PriorityLine</strong> — список осіб, які користуються правом першочергового одержання жилих приміщень;
+
+<li style="margin-bottom: 10px;"><strong>OutOfLine</strong> — список громадян, які користуються правом позачергового одержання жилих приміщень.
+</li>
+</ol>
+<h3 style="margin-bottom: 15px; margin-top: 30px;">3.1. Книга обліку осіб, які перебувають на черзі на одержання жилих приміщень (ресурс Line)</h3>
+
+
+
+<table style="margin-bottom: 30px">
+  <tr>
+   <td colspan="2" ><strong><center>Інформація про ресурс</center></strong>
+   </td>
+  </tr>
+  <tr>
+   <td>Назва ресурсу
+   </td>
+   <td>Line
+   </td>
+  </tr>
+  <tr>
+   <td>Що є одним записом в таблиці (рядком)
+   </td>
+   <td>Одна особа, яка перебуває на черзі на одержання жилих приміщень
+   </td>
+  </tr>
+  <tr>
+   <td>Спосіб оновлення
+   </td>
+   <td>Розміщення нової версії ресурсу
+   </td>
+  </tr>
+  <tr>
+   <td colspan="2" ><strong><center>Прикріплені файли</center></strong>
+   </td>
+  </tr>
+  <tr>
+   <td>Шаблон таблиці
+   </td>
+   <td><a href="https://github.com/tapas-opendata/decreet-835-mun/raw/master/property/housing-line/line/Line.xlsx">Line.xlsx</a>
+   </td>
+  </tr>
+  <tr>
+   <td>Приклад таблиці
+   </td>
+   <td><a href="https://github.com/tapas-opendata/decreet-835-mun/raw/master/property/housing-line/line/Example.xlsx">Example.xlsx</a>
+   </td>
+  </tr>
+  <tr>
+   <td>Структура (XLSX, CSV, JSON)
+   </td>
+   <td><a href="https://github.com/tapas-opendata/decreet-835-mun/raw/master/property/housing-line/line/Structure.xlsx">Structure.xlsx</a>, <a href="https://raw.githubusercontent.com/tapas-opendata/decreet-835-mun/master/property/housing-line/line/Structure.csv">Structure.csv</a>, <a href="https://raw.githubusercontent.com/tapas-opendata/decreet-835-mun/master/property/housing-line/line/Structure.json">Structure.json</a>
+   </td>
+  </tr>
+</table>
+
+
+
+
+
+<div style="margin-bottom: 25px; background-color:#F4F7FA; padding: 20px"><p><b>Зверніть увагу!</b> Набір необхідно готувати й вести в електронних таблицях Microsoft Excel, LibreOffice Calc або Google Таблицях. Для оприлюднення набору використовуються формати XLSX, ODS, CSV. На портал достатньо завантажити XLSX або ODS книгу, що містить один аркуш. За таких умов ресурс потрапить у базу даних порталу (сховище даних) і його CSV-версія згенерується автоматично. Також дані будуть доступними в форматі JSON через <a href="https://docs.ckan.org/en/latest/maintaining/datastore.html">API порталу</a>.</p></div>
+
+
+<p style="margin-bottom: 10px; text-align: center;"><strong>Таблиця 1 — Структура таблиці (ресурсу) Line</strong></p>
+
+<table style="margin-bottom: 30px">
+  <tr>
+   <td><strong>Назва колонки (name)</strong>
+   </td>
+   <td><strong>Заголовок колонки (title)</strong>
+   </td>
+   <td><strong>Опис значень (description)</strong>
+   </td>
+   <td><strong>Тип даних (datatype)</strong>
+   </td>
+   <td><strong>Вимога заповнення (required)</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>number
+   </td>
+   <td>Номер
+   </td>
+   <td>Номер загального порядку в черзі на одержання жилих приміщень (ціле число). Наприклад: 19.
+   </td>
+   <td>Ціле число (integer)
+   </td>
+   <td>Істина (true)
+   </td>
+  </tr>
+  <tr>
+   <td>name
+   </td>
+   <td>Прізвище, ім'я та по батькові
+   </td>
+   <td>Прізвище, ім'я та по батькові заявника. Наприклад: Петренко Олег Іванович.
+   </td>
+   <td>Текст (string)
+   </td>
+   <td>Істина (true)
+   </td>
+  </tr>
+  <tr>
+   <td>recordDecisionDate
+   </td>
+   <td>Дата рішення про взяття на облік
+   </td>
+   <td>Дата рішення про взяття на облік у форматі ISO 8601 (рррр-мм-дд). Наприклад: 2014-05-30.
+   </td>
+   <td>Дата (date)
+   </td>
+   <td>Істина (true)
+   </td>
+  </tr>
+  <tr>
+   <td>recordDecisionNumber
+   </td>
+   <td>Номер рішення про взяття на облік
+   </td>
+   <td>Номер рішення про взяття на облік (без знака «№»). Наприклад: 123-р.
+   </td>
+   <td>Текст (string)
+   </td>
+   <td>Істина (true)
+   </td>
+  </tr>
+  <tr>
+   <td>priorityDecisionDate
+   </td>
+   <td>Дата рішення про включення до списку першочерговиків
+   </td>
+   <td>Дата рішення про включення до списку першочерговиків у форматі ISO 8601 (рррр-мм-дд). Наприклад: 2014-05-30.
+   </td>
+   <td>Дата (date)
+   </td>
+   <td>Хибність (false)
+   </td>
+  </tr>
+  <tr>
+   <td>priorityDecisionNumber
+   </td>
+   <td>Номер рішення про включення до списку першочерговиків
+   </td>
+   <td>Номер рішення про включення до списку першочерговиків (без знака «№»). Наприклад: 123-р.
+   </td>
+   <td>Текст (string)
+   </td>
+   <td>Хибність (false)
+   </td>
+  </tr>
+  <tr>
+   <td>provisionDecisionDate
+   </td>
+   <td>Дата рішення про надання жилого приміщення
+   </td>
+   <td>Дата рішення про надання жилого приміщення у форматі ISO 8601 (рррр-мм-дд). Наприклад: 2014-05-30.
+   </td>
+   <td>Дата (date)
+   </td>
+   <td>Хибність (false)
+   </td>
+  </tr>
+  <tr>
+   <td>provisionDecisionNumber
+   </td>
+   <td>Номер рішення про надання жилого приміщення
+   </td>
+   <td>Номер рішення про надання жилого приміщення (без знака «№»). Наприклад: 123-р.
+   </td>
+   <td>Текст (string)
+   </td>
+   <td>Хибність (false)
+   </td>
+  </tr>
+  <tr>
+   <td>exclusionDecisionDate
+   </td>
+   <td>Дата рішення про зняття з обліку
+   </td>
+   <td>Дата рішення про зняття з обліку у форматі ISO 8601 (рррр-мм-дд). Наприклад: 2014-05-30.
+   </td>
+   <td>Дата (date)
+   </td>
+   <td>Хибність (false)
+   </td>
+  </tr>
+  <tr>
+   <td>exclusionDecisionNumber
+   </td>
+   <td>Номер рішення про зняття з обліку
+   </td>
+   <td>Номер рішення про зняття з обліку (без знака «№»). Наприклад: 123-р.
+   </td>
+   <td>Текст (string)
+   </td>
+   <td>Хибність (false)
+   </td>
+  </tr>
+</table>
+
+
+<h3 style="margin-bottom: 15px; margin-top: 30px;">3.2. Список осіб, які користуються правом першочергового одержання жилих приміщень (ресурс PriorityLine)</h3>
+
+
+
+<table style="margin-bottom: 30px">
+  <tr>
+   <td colspan="2" ><strong><center>Інформація про ресурс</center></strong>
+   </td>
+  </tr>
+  <tr>
+   <td>Назва ресурсу
+   </td>
+   <td>PriorityLine
+   </td>
+  </tr>
+  <tr>
+   <td>Що є одним записом в таблиці (рядком)
+   </td>
+   <td>Одна особа, яка користується правом першочергового одержання жилих приміщень
+   </td>
+  </tr>
+  <tr>
+   <td>Спосіб оновлення
+   </td>
+   <td>Розміщення нової версії ресурсу
+   </td>
+  </tr>
+  <tr>
+   <td colspan="2" ><strong><center>Прикріплені файли</center></strong>
+   </td>
+  </tr>
+  <tr>
+   <td>Шаблон таблиці
+   </td>
+   <td><a href="https://github.com/tapas-opendata/decreet-835-mun/raw/master/property/housing-line/priority-line/PriorityLine.xlsx">PriorityLine.xlsx</a>
+   </td>
+  </tr>
+  <tr>
+   <td>Приклад таблиці
+   </td>
+   <td><a href="https://github.com/tapas-opendata/decreet-835-mun/raw/master/property/housing-line/priority-line/Example.xlsx">Example.xlsx</a>
+   </td>
+  </tr>
+  <tr>
+   <td>Структура (XLSX, CSV, JSON)
+   </td>
+   <td><a href="https://github.com/tapas-opendata/decreet-835-mun/raw/master/property/housing-line/priority-line/Structure.xlsx">Structure.xlsx</a>, <a href="https://raw.githubusercontent.com/tapas-opendata/decreet-835-mun/master/property/housing-line/priority-line/Structure.csv">Structure.csv</a>, <a href="https://raw.githubusercontent.com/tapas-opendata/decreet-835-mun/master/property/housing-line/priority-line/Structure.json">Structure.json</a>
+   </td>
+  </tr>
+</table>
+
+
+<p style="margin-bottom: 10px; text-align: center;"><strong>Таблиця 2 — Структура таблиці (ресурсу) PriorityLine</strong></p>
+
+<table style="margin-bottom: 30px">
+  <tr>
+   <td><strong>Назва колонки (name)</strong>
+   </td>
+   <td><strong>Заголовок колонки (title)</strong>
+   </td>
+   <td><strong>Опис значень (description)</strong>
+   </td>
+   <td><strong>Тип даних (datatype)</strong>
+   </td>
+   <td><strong>Вимога заповнення (required)</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>number
+   </td>
+   <td>Номер
+   </td>
+   <td>Номер загального порядку в списку на одержання жилих приміщень (ціле число). Наприклад: 19.
+   </td>
+   <td>Ціле число (integer)
+   </td>
+   <td>Істина (true)
+   </td>
+  </tr>
+  <tr>
+   <td>name
+   </td>
+   <td>Прізвище, ім'я, по батькові
+   </td>
+   <td>Прізвище, ім'я та по батькові заявника. Наприклад: Петренко Олег Іванович.
+   </td>
+   <td>Текст (string)
+   </td>
+   <td>Істина (true)
+   </td>
+  </tr>
+  <tr>
+   <td>priorityDecisionDate
+   </td>
+   <td>Дата рішення про включення до списку
+   </td>
+   <td>Дата рішення про включення до списку у форматі ISO 8601 (рррр-мм-дд). Наприклад: 2014-05-30.
+   </td>
+   <td>Дата (date)
+   </td>
+   <td>Хибність (false)
+   </td>
+  </tr>
+  <tr>
+   <td>priorityDecisionNumber
+   </td>
+   <td>Номер рішення про включення до списку
+   </td>
+   <td>Номер рішення про включення до списку (без знака «№»). Наприклад: 123-р.
+   </td>
+   <td>Текст (string)
+   </td>
+   <td>Хибність (false)
+   </td>
+  </tr>
+  <tr>
+   <td>provisionDecisionDate
+   </td>
+   <td>Дата рішення про надання жилого приміщення
+   </td>
+   <td>Дата рішення про надання жилого приміщення у форматі ISO 8601 (рррр-мм-дд). Наприклад: 2014-05-30.
+   </td>
+   <td>Дата (date)
+   </td>
+   <td>Хибність (false)
+   </td>
+  </tr>
+  <tr>
+   <td>provisionDecisionNumber
+   </td>
+   <td>Номер рішення про надання жилого приміщення
+   </td>
+   <td>Номер рішення про надання жилого приміщення (без знака «№»). Наприклад: 123-р.
+   </td>
+   <td>Текст (string)
+   </td>
+   <td>Хибність (false)
+   </td>
+  </tr>
+  <tr>
+   <td>exclusionDecisionDate
+   </td>
+   <td>Дата рішення про зняття з обліку
+   </td>
+   <td>Дата рішення про зняття з обліку у форматі ISO 8601 (рррр-мм-дд). Наприклад: 2014-05-30.
+   </td>
+   <td>Дата (date)
+   </td>
+   <td>Хибність (false)
+   </td>
+  </tr>
+  <tr>
+   <td>exclusionDecisionNumber
+   </td>
+   <td>Номер рішення про зняття з обліку
+   </td>
+   <td>Номер рішення про зняття з обліку (без знака «№»). Наприклад: 123-р.
+   </td>
+   <td>Текст (string)
+   </td>
+   <td>Хибність (false)
+   </td>
+  </tr>
+</table>
+
+
+<h3 style="margin-bottom: 15px; margin-top: 30px;">3.3. Список громадян, які користуються правом позачергового одержання жилих приміщень</h3>
+
+
+
+<table style="margin-bottom: 30px">
+  <tr>
+   <td colspan="2" ><strong><center>Інформація про ресурс</center></strong>
+   </td>
+  </tr>
+  <tr>
+   <td>Назва ресурсу
+   </td>
+   <td>OutOfLine
+   </td>
+  </tr>
+  <tr>
+   <td>Що є одним записом в таблиці (рядком)
+   </td>
+   <td>Одна особа, яка користується правом позачергового одержання жилих приміщень
+   </td>
+  </tr>
+  <tr>
+   <td>Спосіб оновлення
+   </td>
+   <td>Розміщення нової версії ресурсу
+   </td>
+  </tr>
+  <tr>
+   <td colspan="2" ><strong><center>Прикріплені файли</center></strong>
+   </td>
+  </tr>
+  <tr>
+   <td>Шаблон таблиці
+   </td>
+   <td><a href="https://github.com/tapas-opendata/decreet-835-mun/raw/master/property/housing-line/out-of-line/OutOfLine.xlsx">OutOfLine.xlsx</a>
+   </td>
+  </tr>
+  <tr>
+   <td>Приклад таблиці
+   </td>
+   <td><a href="https://github.com/tapas-opendata/decreet-835-mun/raw/master/property/housing-line/out-of-line/Example.xlsx">Example.xlsx</a>
+   </td>
+  </tr>
+  <tr>
+   <td>Структура (XLSX, CSV, JSON)
+   </td>
+   <td><a href="https://github.com/tapas-opendata/decreet-835-mun/raw/master/property/housing-line/out-of-line/Structure.xlsx">Structure.xlsx</a>, <a href="https://raw.githubusercontent.com/tapas-opendata/decreet-835-mun/master/property/housing-line/out-of-line/Structure.csv">Structure.csv</a>, <a href="https://raw.githubusercontent.com/tapas-opendata/decreet-835-mun/master/property/housing-line/out-of-line/Structure.json">Structure.json</a>
+   </td>
+  </tr>
+</table>
+
+
+<p style="margin-bottom: 10px; text-align: center;"><strong>Таблиця 3 — Структура таблиці (ресурсу) OutOfLine</strong></p>
+
+<table style="margin-bottom: 30px">
+  <tr>
+   <td><strong>Назва колонки (name)</strong>
+   </td>
+   <td><strong>Заголовок колонки (title)</strong>
+   </td>
+   <td><strong>Опис значень (description)</strong>
+   </td>
+   <td><strong>Тип даних (datatype)</strong>
+   </td>
+   <td><strong>Вимога заповнення (required)</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>number
+   </td>
+   <td>Номер
+   </td>
+   <td>Номер загального порядку в списку на одержання жилих приміщень (ціле число). Наприклад: 19.
+   </td>
+   <td>Ціле число (integer)
+   </td>
+   <td>Істина (true)
+   </td>
+  </tr>
+  <tr>
+   <td>name
+   </td>
+   <td>Прізвище, ім'я та по батькові
+   </td>
+   <td>Прізвище, ім'я та по батькові заявника. Наприклад: Петренко Олег Іванович.
+   </td>
+   <td>Текст (string)
+   </td>
+   <td>Істина (true)
+   </td>
+  </tr>
+  <tr>
+   <td>outOfLineDecisionDate
+   </td>
+   <td>Дата рішення про включення до списку
+   </td>
+   <td>Дата рішення про включення до списку у
+<p style="margin-bottom: 25px">
+форматі ISO 8601 (рррр-мм-дд). Наприклад: 2014-05-30.
+   </td>
+   <td>Дата (date)
+   </td>
+   <td>Хибність (false)
+   </td>
+  </tr>
+  <tr>
+   <td>outOfLineDecisionNumber
+   </td>
+   <td>Номер рішення про включення до списку
+   </td>
+   <td>Номер рішення про включення до списку (без знака «№»). Наприклад: 123-р.
+   </td>
+   <td>Текст (string)
+   </td>
+   <td>Хибність (false)
+   </td>
+  </tr>
+  <tr>
+   <td>provisionDecisionDate
+   </td>
+   <td>Дата рішення про надання жилого приміщення
+   </td>
+   <td>Дата рішення про надання жилого приміщення у форматі ISO 8601 (рррр-мм-дд). Наприклад: 2014-05-30.
+   </td>
+   <td>Дата (date)
+   </td>
+   <td>Хибність (false)
+   </td>
+  </tr>
+  <tr>
+   <td>provisionDecisionNumber
+   </td>
+   <td>Номер рішення про надання жилого приміщення
+   </td>
+   <td>Номер рішення про надання жилого приміщення (без знака «№»). Наприклад: 123-р.
+   </td>
+   <td>Текст (string)
+   </td>
+   <td>Хибність (false)
+   </td>
+  </tr>
+  <tr>
+   <td>exclusionDecisionDate
+   </td>
+   <td>Дата рішення про зняття з обліку
+   </td>
+   <td>Дата рішення про зняття з обліку у форматі ISO 8601 (рррр-мм-дд). Наприклад: 2014-05-30.
+   </td>
+   <td>Дата (date)
+   </td>
+   <td>Хибність (false)
+   </td>
+  </tr>
+  <tr>
+   <td>exclusionDecisionNumber
+   </td>
+   <td>Номер рішення про зняття з обліку
+   </td>
+   <td>Номер рішення про зняття з обліку (без знака «№»). Наприклад: 123-р.
+   </td>
+   <td>Текст (string)
+   </td>
+   <td>Хибність (false)
+   </td>
+  </tr>
+</table>
+
+
+<h2 style="margin-bottom: 15px; margin-top: 50px;">4. Оформлення паспортів наборів та ресурсів</h2>
+
+
+
+
+
+<div style="margin-bottom: 25px; background-color:#F4F7FA; padding: 20px"><p><b>Зверніть увагу!</b> Назва набору має відповідати Переліку, затвердженому <a href="https://zakon.rada.gov.ua/laws/show/835-2015-%D0%BF">Постановою КМУ № 835 (зі змінами)</a>. Також вона може включати назву розпорядника або населеного пункту, з яким пов'язані дані. Це полегшує пошук набору в пошукових системах.</p></div>
+
+
+<p style="margin-bottom: 10px; text-align: center;"><strong>Таблиця 4 — Приклад паспорта набору даних на data.gov.ua</strong></p>
+
+<table style="margin-bottom: 30px">
+  <tr>
+   <td><strong>Назва поля</strong>
+   </td>
+   <td><strong>Приклад заповнення</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>Назва набору
+   </td>
+   <td>Дані обліку громадян, які потребують поліпшення житлових умов
+   </td>
+  </tr>
+  <tr>
+   <td>Відомості про мову інформації, яка міститься у наборі
+   </td>
+   <td>Українська
+   </td>
+  </tr>
+  <tr>
+   <td>Частота оновлення
+   </td>
+   <td>Щотижня
+   </td>
+  </tr>
+  <tr>
+   <td>Опис
+   </td>
+   <td>Набір включає три ресурси: Книга обліку осіб, які перебувають на черзі на одержання жилих приміщень (ресурс Line); Список осіб, які користуються правом першочергового одержання жилих приміщень (ресурс PriorityLine); Список громадян, які користуються правом позачергового одержання жилих приміщень (ресурс OutOfLine).
+   </td>
+  </tr>
+  <tr>
+   <td>Підстава та призначення збору інформації
+   </td>
+   <td>Житловий Кодекс України, Закон України «Про місцеве самоврядування в Україні»  від 21.05.1997 № 280/97-ВР, Постанова Ради Міністрів УРСР від 11.12.1984 № 470
+   </td>
+  </tr>
+  <tr>
+   <td>Ключові слова
+   </td>
+   <td>житло, черга, звернення, рішення, комунальна власність, жилі приміщення
+   </td>
+  </tr>
+  <tr>
+   <td>Відповідальна особа
+   </td>
+   <td>Симоненко Олена Петрівна
+   </td>
+  </tr>
+  <tr>
+   <td>Адреса електронної пошти відповідальної особи
+   </td>
+   <td>o.symonenko@example.gov.ua
+   </td>
+  </tr>
+</table>
+
+
+<p style="margin-bottom: 10px; text-align: center;"><strong>Таблиця 5 — Приклад паспорта ресурсу Line</strong></p>
+
+<table style="margin-bottom: 30px">
+  <tr>
+   <td><strong>Назва поля</strong>
+   </td>
+   <td><strong>Приклад заповнення</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>Назва ресурсу
+   </td>
+   <td>Line.xlsx
+   </td>
+  </tr>
+  <tr>
+   <td>Опис
+   </td>
+   <td>Таблиця містить книгу обліку осіб, які перебувають на черзі на одержання жилих приміщень. Зокрема, номер в черзі, прізвище, ім'я та по батькові заявника, реквізити рішень про взяття на облік, включення до списку першочерговиків, надання жилого приміщення, зняття з обліку. Кожним записом до таблиці є одна особа, яка перебуває на черзі на одержання жилих приміщень.
+   </td>
+  </tr>
+  <tr>
+   <td>Формат
+   </td>
+   <td>XLSX
+   </td>
+  </tr>
+</table>
+
+
+<p style="margin-bottom: 10px; text-align: center;"><strong>Таблиця 6 — Приклад паспорта ресурсу PriorityLine</strong></p>
+
+<table style="margin-bottom: 30px">
+  <tr>
+   <td><strong>Назва поля</strong>
+   </td>
+   <td><strong>Приклад заповнення</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>Назва ресурсу
+   </td>
+   <td>PriorityLine.xlsx
+   </td>
+  </tr>
+  <tr>
+   <td>Опис
+   </td>
+   <td>Таблиця містить список осіб, які користуються правом першочергового одержання жилих приміщень. Зокрема, номер в черзі, прізвище, ім'я та по батькові заявника, реквізити рішень про взяття на облік, включення до списку, надання жилого приміщення, зняття з обліку. Кожним записом до таблиці є одна особа, яка користуються правом першочергового одержання жилих приміщень.
+   </td>
+  </tr>
+  <tr>
+   <td>Формат
+   </td>
+   <td>XLSX
+   </td>
+  </tr>
+</table>
+
+
+<p style="margin-bottom: 10px; text-align: center;"><strong>Таблиця 7 — Приклад паспорта ресурсу OutOfLine</strong></p>
+
+<table style="margin-bottom: 30px">
+  <tr>
+   <td><strong>Назва поля</strong>
+   </td>
+   <td><strong>Приклад заповнення</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>Назва ресурсу
+   </td>
+   <td>OutOfLine.xlsx
+   </td>
+  </tr>
+  <tr>
+   <td>Опис
+   </td>
+   <td>Таблиця містить список громадян, які користуються правом позачергового одержання жилих приміщень. Зокрема, номер в черзі, прізвище, ім'я та по батькові заявника, реквізити рішень про взяття на облік, включення до списку, надання жилого приміщення, зняття з обліку. Кожним записом до таблиці є одна особа, яка  користуються правом позачергового одержання жилих приміщень.
+   </td>
+  </tr>
+  <tr>
+   <td>Формат
+   </td>
+   <td>XLSX
+   </td>
+  </tr>
+</table>
+

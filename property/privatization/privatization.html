@@ -1,0 +1,283 @@
+<!-----
+
+Перелік об’єктів комунальної власності, які підлягають приватизації
+https://data.gov.ua/pages/835-recm-property-privatization
+
+----->
+
+
+<h2 style="margin-bottom: 15px; margin-top: 50px;">1. Коротка довідка</h2>
+
+
+
+<table style="margin-bottom: 30px">
+  <tr>
+   <td><strong>Критерій</strong>
+   </td>
+   <td><strong>Характеристика</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>Нормативно-правові акти, які визначають створення, збір, зберігання, використання й поширення даних
+   </td>
+   <td><a href="https://zakon.rada.gov.ua/laws/show/280/97-%D0%B2%D1%80">Закон України «Про місцеве самоврядування в Україні» від 21.05.1997 № 280/97-ВР</a>, <a href="https://zakon.rada.gov.ua/laws/show/2269-19">Закон України «Про приватизацію державного і комунального майна» від 18.01.2018 № 2269-VIII</a>, <a href="https://zakon.rada.gov.ua/laws/show/uk/432-2018-%D0%BF">Постанова КМУ «Про затвердження Порядку проведення електронних аукціонів для продажу об'єктів малої приватизації та визначення додаткових умов продажу» від 10.05.2018 № 432</a>
+   </td>
+  </tr>
+  <tr>
+   <td>Інформація, що створюється, збирається, зберігається й поширюється
+   </td>
+   <td>Відповідно до статті 10 Закону України «Про приватизацію державного і комунального майна» перелік об’єктів, які підлягають приватизації, затверджується органами місцевого самоврядування й оприлюднюється на офіційних сайтах місцевих рад та в електронній торговій системі (ProZorro.Продажі).
+   </td>
+  </tr>
+  <tr>
+   <td>Способи оновлення
+   </td>
+   <td>Затвердження та внесення змін до переліків об’єктів, що підлягають приватизації
+   </td>
+  </tr>
+  <tr>
+   <td>Частота оновлення інформації
+   </td>
+   <td>Позапланово (протягом трьох робочих днів з моменту внесення змін)
+   </td>
+  </tr>
+  <tr>
+   <td>Тип даних
+   </td>
+   <td>Структуровані
+   </td>
+  </tr>
+  <tr>
+   <td>Формати файлів
+   </td>
+   <td>XLSX, ODS, CSV, можливі інші формати структурованих даних
+   </td>
+  </tr>
+</table>
+
+
+<h2 style="margin-bottom: 15px; margin-top: 50px;">2. Огляд нормативно-правової бази</h2>
+
+
+<p style="margin-bottom: 25px">
+Порядок приватизації державного й комунального майна (стаття 10 <a href="https://zakon.rada.gov.ua/laws/show/2269-19">Закону України «Про приватизацію державного і комунального майна»</a>) передбачає оприлюднення переліків об’єктів на офіційних сайтах місцевих рад та в електронній торговій системі (<a href="https://prozorro.sale/eaassets/search?source=eaassets&index=5">ProZorro.Продажі</a>).
+</p>
+<p style="margin-bottom: 25px">
+Відповідно до пункту 20 Порядку затвердженого <a href="https://zakon.rada.gov.ua/laws/show/uk/432-2018-%D0%BF">Постановою КМУ від 10.05.2018 № 432</a>, 
+</p>
+<p style="margin-bottom: 25px">
+орган приватизації через кабінет на електронному майданчику публікує перелік об’єктів, що підлягають приватизації, та/або зміни до нього протягом п’яти робочих днів з дати його затвердження та/або внесення змін до такого переліку.
+</p>
+<h2 style="margin-bottom: 15px; margin-top: 50px;">3. Підготовка даних та структура набору</h2>
+
+
+<p style="margin-bottom: 25px">
+Дані набору розміщуються в системі <a href="https://prozorro.sale/eaassets/search?source=eaassets&index=5">ProZorro.Продажі</a> й доступні в машиночитаному форматі через інтерфейс прикладного програмування (API). Для уникнення дублювання інформації на data.gov.ua достатньо оприлюднити перелік унікальних кодів, присвоєних торговою системою, та посилань на веб-сторінки об’єктів.
+</p>
+
+<table style="margin-bottom: 30px">
+  <tr>
+   <td colspan="2" ><strong><center>Інформація про ресурс</center></strong>
+   </td>
+  </tr>
+  <tr>
+   <td>Назва ресурсу
+   </td>
+   <td>List
+   </td>
+  </tr>
+  <tr>
+   <td>Що є одним записом в таблиці (рядком)
+   </td>
+   <td>Один об’єкт приватизації відповідно до частини 1 статті 4 та статті 5 Закон України «Про приватизацію державного і комунального майна»
+   </td>
+  </tr>
+  <tr>
+   <td>Спосіб оновлення
+   </td>
+   <td>Розміщення нової версії ресурсу
+   </td>
+  </tr>
+  <tr>
+   <td colspan="2" ><strong><center>Прикріплені файли</center></strong>
+   </td>
+  </tr>
+  <tr>
+   <td>Шаблон таблиці
+   </td>
+   <td><a href="https://github.com/tapas-opendata/decreet-835-mun/raw/master/property/privatization/List.xlsx">List.xlsx</a>
+   </td>
+  </tr>
+  <tr>
+   <td>Приклад таблиці
+   </td>
+   <td><a href="https://github.com/tapas-opendata/decreet-835-mun/raw/master/property/privatization/Example.xlsx">Example.xlsx</a>
+   </td>
+  </tr>
+  <tr>
+   <td>Структура (XLSX, CSV, JSON)
+   </td>
+   <td><a href="https://github.com/tapas-opendata/decreet-835-mun/raw/master/property/privatization/Structure.xlsx">Structure.xlsx</a>, <a href="https://raw.githubusercontent.com/tapas-opendata/decreet-835-mun/master/property/privatization/Structure.csv">Structure.csv</a>, <a href="https://raw.githubusercontent.com/tapas-opendata/decreet-835-mun/master/property/privatization/Structure.json">Structure.json</a>
+   </td>
+  </tr>
+</table>
+
+
+
+
+
+<div style="margin-bottom: 25px; background-color:#F4F7FA; padding: 20px"><p><b>Зверніть увагу!</b> Набір необхідно готувати й вести в електронних таблицях Microsoft Excel, LibreOffice Calc або Google Таблицях. Для оприлюднення набору використовуються формати XLSX, ODS, CSV. На портал достатньо завантажити XLSX або ODS книгу, що містить один аркуш. За таких умов ресурс потрапить у базу даних порталу (сховище даних) і його CSV-версія згенерується автоматично. Також дані будуть доступними в форматі JSON через <a href="https://docs.ckan.org/en/latest/maintaining/datastore.html">API порталу</a>.</p></div>
+
+
+<p style="margin-bottom: 10px; text-align: center;"><strong>Таблиця 1 — Структура таблиці (ресурсу) List</strong></p>
+
+<table style="margin-bottom: 30px">
+  <tr>
+   <td><strong>Назва колонки (name)</strong>
+   </td>
+   <td><strong>Заголовок колонки (title)</strong>
+   </td>
+   <td><strong>Опис значень (description)</strong>
+   </td>
+   <td><strong>Тип даних (datatype)</strong>
+   </td>
+   <td><strong>Вимога заповнення (required)</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>ocid
+   </td>
+   <td>Код
+   </td>
+   <td>Унікальний код об’єкта, присвоєний торговою системою. Наприклад: UA-AR-P-2019-01-01-000111-1.
+   </td>
+   <td>Текст (string)
+   </td>
+   <td>Істина (true)
+   </td>
+  </tr>
+  <tr>
+   <td>title
+   </td>
+   <td>Назва
+   </td>
+   <td>Назва об’єкта. Наприклад: Підвальне приміщення.
+   </td>
+   <td>Текст (string)
+   </td>
+   <td>Істина (true)
+   </td>
+  </tr>
+  <tr>
+   <td>url
+   </td>
+   <td>Посилання
+   </td>
+   <td>Посилання на веб-сторінку з інформацією про об’єкт на ProZorro.Продажі або електронному майданчику. Наприклад: https://prozorro.sale/ssp_object/UA-AR-P-2019-01-01-000001-1
+   </td>
+   <td>Посилання (anyURI)
+   </td>
+   <td>Істина (true)
+   </td>
+  </tr>
+</table>
+
+
+<h2 style="margin-bottom: 15px; margin-top: 50px;">4. Оформлення паспортів наборів та ресурсів</h2>
+
+
+
+
+
+<div style="margin-bottom: 25px; background-color:#F4F7FA; padding: 20px"><p><b>Зверніть увагу!</b> Назва набору має відповідати Переліку, затвердженому <a href="https://zakon.rada.gov.ua/laws/show/835-2015-%D0%BF">Постановою КМУ № 835 (зі змінами)</a>. Також вона може включати назву розпорядника або населеного пункту, з яким пов'язані дані. Це полегшує пошук набору в пошукових системах.</p></div>
+
+
+<p style="margin-bottom: 10px; text-align: center;"><strong>Таблиця 2 — Приклад паспорта набору даних на data.gov.ua</strong></p>
+
+<table style="margin-bottom: 30px">
+  <tr>
+   <td><strong>Назва поля</strong>
+   </td>
+   <td><strong>Приклад заповнення</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>Назва набору
+   </td>
+   <td>Перелік об’єктів комунальної власності Полтавської міської ради, які підлягають приватизації
+   </td>
+  </tr>
+  <tr>
+   <td>Відомості про мову інформації, яка міститься у наборі
+   </td>
+   <td>Українська
+   </td>
+  </tr>
+  <tr>
+   <td>Частота оновлення
+   </td>
+   <td>У випадку внесення змін
+   </td>
+  </tr>
+  <tr>
+   <td>Опис
+   </td>
+   <td>Набір містить перелік об’єктів комунальної власності Полтавської міської ради, які підлягають приватизації, оприлюднений в електронній торговій системі ProZorro.Продажі.
+   </td>
+  </tr>
+  <tr>
+   <td>Підстава та призначення збору інформації
+   </td>
+   <td>Закон України «Про місцеве самоврядування в Україні» від 21.05.1997 № 280/97-ВР, Закон України «Про приватизацію державного і комунального майна» від 18.01.2018 № 2269-VIII, Постанова КМУ від 10.05.2018 № 432
+   </td>
+  </tr>
+  <tr>
+   <td>Ключові слова
+   </td>
+   <td>власність, майно, будівля, приміщення, земля, ділянка, приватизація, аукціон, майновий комплекс, комунальне майно
+   </td>
+  </tr>
+  <tr>
+   <td>Відповідальна особа
+   </td>
+   <td>Симоненко Олена Петрівна
+   </td>
+  </tr>
+  <tr>
+   <td>Адреса електронної пошти відповідальної особи
+   </td>
+   <td>o.symonenko@example.gov.ua
+   </td>
+  </tr>
+</table>
+
+
+<p style="margin-bottom: 10px; text-align: center;"><strong>Таблиця 3 — Приклад паспорта ресурсу List</strong></p>
+
+<table style="margin-bottom: 30px">
+  <tr>
+   <td><strong>Назва поля</strong>
+   </td>
+   <td><strong>Приклад заповнення</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>Назва ресурсу
+   </td>
+   <td>List.xlsx
+   </td>
+  </tr>
+  <tr>
+   <td>Опис
+   </td>
+   <td>Таблиця містить унікальний код, назву й посилання на сторінку об’єкта в системі ProZorro.Продажі. Кожним записом в таблиці є окремий об’єкт.
+   </td>
+  </tr>
+  <tr>
+   <td>Формат
+   </td>
+   <td>XLSX
+   </td>
+  </tr>
+</table>
+
