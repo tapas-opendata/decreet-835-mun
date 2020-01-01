@@ -1,0 +1,1041 @@
+<!-----
+
+Розклад руху громадського транспорту
+https://data.gov.ua/pages/835-recm-transport-schedule
+
+----->
+
+
+<h2 style="margin-bottom: 15px; margin-top: 50px;">1. Коротка довідка</h2>
+
+
+
+<table style="margin-bottom: 30px">
+  <tr>
+   <td><strong>Критерій</strong>
+   </td>
+   <td><strong>Характеристика</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>Нормативно-правові акти, які визначають створення, збір, зберігання, використання й поширення даних
+   </td>
+   <td><a href="https://zakon.rada.gov.ua/laws/show/z0408-10">Наказ Мінтрансзв'язку України «Про затвердження Порядку розроблення та затвердження паспорта автобусного маршруту» від 07.05.2010 № 278</a>, <a href="https://zakon.rada.gov.ua/laws/show/z1282-13">Наказ Мінінфраструктури «Про затвердження Порядку організації перевезень пасажирів та багажу автомобільним транспортом» від 15.07.2013 № 480</a>
+   </td>
+  </tr>
+  <tr>
+   <td>Інформація, що створюється, збирається, зберігається й поширюється
+   </td>
+   <td>Графіки руху затверджуються в паспортах автобусних маршрутів відповідно до Наказу Мінтрансзв'язку України від 07.05.2010 № 278. Також вони можуть вноситись до систем диспетчерського управління (стандарт GTFS або його аналоги).
+   </td>
+  </tr>
+  <tr>
+   <td>Способи оновлення
+   </td>
+   <td>Зміна мережі маршрутів громадського транспорту, проведення конкурсів з перевезення пасажирів на автобусному маршруті загального користування.
+   </td>
+  </tr>
+  <tr>
+   <td>Частота оновлення інформації
+   </td>
+   <td>Щокварталу або позапланово (протягом трьох робочих днів з моменту внесення змін)
+   </td>
+  </tr>
+  <tr>
+   <td>Тип даних
+   </td>
+   <td>Структуровані
+   </td>
+  </tr>
+  <tr>
+   <td>Формати файлів
+   </td>
+   <td>XLSX, ODS, CSV, можливі інші формати структурованих даних
+   </td>
+  </tr>
+</table>
+
+
+<h2 style="margin-bottom: 15px; margin-top: 50px;">2. Огляд нормативно-правової бази</h2>
+
+
+<p style="margin-bottom: 25px">
+Відповідно до <a href="https://zakon.rada.gov.ua/laws/show/z0408-10">Наказу Мінтрансзв'язку України від 07.05.2010 № 278</a> графіки руху затверджуються в паспортах автобусних маршрутів. Але структура таблиці, що використовується в паспортах, не є машиночитаною. Крім цього, графіки руху можуть вноситись до систем диспетчерського управління (стандарт <a href="https://developers.google.com/transit/gtfs/">GTFS</a> або його аналоги).
+</p>
+<h2 style="margin-bottom: 15px; margin-top: 50px;">3. Підготовка даних та структура набору</h2>
+
+
+<p style="margin-bottom: 25px">
+Набір рекомендовано оприлюднювати шляхом експорту даних з систем диспетчерського управління відповідно до вимог стандарту <a href="https://developers.google.com/transit/gtfs/">GTFS Static</a> або аналогів. Це забезпечить можливість використання даних у транспортних сервісах <a href="https://www.google.com.ua/maps/">Google Maps</a>, <a href="https://www.eway.in.ua/ua/cities/kyiv">Easy Way</a> тощо.
+</p>
+<p style="margin-bottom: 25px">
+Якщо це неможливо, наявну інформацію необхідно систематизувати в наступні таблиці (ресурси): 
+</p>
+<ol style="margin-left: 30px">
+
+<li style="margin-bottom: 10px;"><strong>agency</strong> — дані про суб’єктів господарювання, що надають послуги громадського транспорту;
+
+<li style="margin-bottom: 10px;"><strong>stops</strong> — дані про зупинки громадського транспорту;
+
+<li style="margin-bottom: 10px;"><strong>routes</strong> — дані про маршрути громадського транспорту;
+
+<li style="margin-bottom: 10px;"><strong>trips</strong> — дані про рейси громадського транспорту;
+
+<li style="margin-bottom: 10px;"><strong>stop_times</strong> — графік відбуття та прибуття транспорту до та від зупинок;
+
+<li style="margin-bottom: 10px;"><strong>calendar</strong> — варіанти тижневих графіків роботи громадського транспорту;
+
+<li style="margin-bottom: 10px;"><strong>calendar_dates</strong> — перелік винятків до тижневих графіків.
+</li>
+</ol>
+<p style="margin-bottom: 25px">
+Структура таблиць <strong>agency</strong> та <strong>routes</strong> визначена в наборі <a href="https://docs.google.com/document/d/1X1kgiEAy_6kaAgEysPuVQTGe4wR6qsPa2N09OaleppI/edit?usp=sharing">«Перелік перевізників, що надають послуги пасажирського автомобільного транспорту, та маршрутів перевезення»</a>, таблиці <strong>stops</strong> — <a href="https://docs.google.com/document/d/1hqR7B0JS2GfMA1fcbWFIZfE3y4eGFv5WBRSMvDRAmFI/edit?usp=sharing">«Дані про місце розміщення зупинок міського електро- та автомобільного транспорту»</a>.
+</p>
+<h3 style="margin-bottom: 15px; margin-top: 30px;">3.1. Перелік рейсів громадського транспорту (ресурс trips)</h3>
+
+
+
+<table style="margin-bottom: 30px">
+  <tr>
+   <td colspan="2" ><strong><center>Інформація про ресурс</center></strong>
+   </td>
+  </tr>
+  <tr>
+   <td>Назва ресурсу
+   </td>
+   <td>trips
+   </td>
+  </tr>
+  <tr>
+   <td>Що є одним записом в таблиці (рядком)
+   </td>
+   <td>Один рейс громадського транспорту на маршруті (поїздка від початкової зупинки до кінцевої).
+   </td>
+  </tr>
+  <tr>
+   <td>Спосіб оновлення
+   </td>
+   <td>Розміщення нової версії ресурсу
+   </td>
+  </tr>
+  <tr>
+   <td colspan="2" ><strong><center>Прикріплені файли</center></strong>
+   </td>
+  </tr>
+  <tr>
+   <td>Шаблон таблиці
+   </td>
+   <td><a href="https://github.com/tapas-opendata/decreet-835-mun/raw/master/transport/schedule/trips/trips.xlsx">trips.xlsx</a>
+   </td>
+  </tr>
+  <tr>
+   <td>Приклад таблиці
+   </td>
+   <td><a href="https://github.com/tapas-opendata/decreet-835-mun/raw/master/transport/schedule/trips/Example.xlsx">Example.xlsx</a>
+   </td>
+  </tr>
+  <tr>
+   <td>Структура (XLSX, CSV, JSON)
+   </td>
+   <td><a href="https://github.com/tapas-opendata/decreet-835-mun/raw/master/transport/schedule/trips/Structure.xlsx">Structure.xlsx</a>, <a href="https://raw.githubusercontent.com/tapas-opendata/decreet-835-mun/master/transport/schedule/trips/Structure.csv">Structure.csv</a>, <a href="https://raw.githubusercontent.com/tapas-opendata/decreet-835-mun/master/transport/schedule/trips/Structure.json">Structure.json</a>
+   </td>
+  </tr>
+</table>
+
+
+
+
+
+<div style="margin-bottom: 25px; background-color:#F4F7FA; padding: 20px"><p><b>Зверніть увагу!</b> Набір необхідно готувати й вести в електронних таблицях Microsoft Excel, LibreOffice Calc або Google Таблицях. Для оприлюднення набору використовуються формати XLSX, ODS, CSV. На портал достатньо завантажити XLSX або ODS книгу, що містить один аркуш. За таких умов ресурс потрапить у базу даних порталу (сховище даних) і його CSV-версія згенерується автоматично. Також дані будуть доступними в форматі JSON через <a href="https://docs.ckan.org/en/latest/maintaining/datastore.html">API порталу</a>.</p></div>
+
+
+<p style="margin-bottom: 10px; text-align: center;"><strong>Таблиця 1 — Структура таблиці (ресурсу) trips</strong></p>
+
+<table style="margin-bottom: 30px">
+  <tr>
+   <td><strong>Назва колонки (name)</strong>
+   </td>
+   <td><strong>Заголовок колонки (title)</strong>
+   </td>
+   <td><strong>Опис значень (description)</strong>
+   </td>
+   <td><strong>Тип даних (datatype)</strong>
+   </td>
+   <td><strong>Вимога заповнення (required)</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>route_id
+   </td>
+   <td>Ідентифікатор маршруту
+   </td>
+   <td>Унікальний ідентифікатор маршруту з таблиці routes (колонка route_id). Наприклад: 12А.
+   </td>
+   <td>Текст (string)
+   </td>
+   <td>Істина (true)
+   </td>
+  </tr>
+  <tr>
+   <td>service_id
+   </td>
+   <td>Тижневий графік роботи
+   </td>
+   <td>Ідентифікатор тижневого графіка роботи, маршруту з таблиці calendar (колонка service_id). Він показує, в які дні тижня відбуваються рейси. Наприклад: пн-вт-ср-чт-пт.
+   </td>
+   <td>Текст (string)
+   </td>
+   <td>Істина (true)
+   </td>
+  </tr>
+  <tr>
+   <td>trip_id
+   </td>
+   <td>Ідентифікатор рейсу
+   </td>
+   <td>Унікальний ідентифікатор рейсу. Це може бути порядковий номер рейсу протягом доби. Наприклад, перший рейс позначається: 01, другий 02, третій — 03 і так далі.
+   </td>
+   <td>Текст (string)
+   </td>
+   <td>Істина (true)
+   </td>
+  </tr>
+  <tr>
+   <td>trip_headsign
+   </td>
+   <td>Кінцева зупинка
+   </td>
+   <td>Якщо різні рейси на маршруті мають різні кінцеві зупинки, необхідно вказати кінцеву зупинку даного рейсу. В іншому випадку вказати кінцеву зупинку для всього маршруту. Наприклад: Індустріальний мікрорайон.
+   </td>
+   <td>Текст (string)
+   </td>
+   <td>Хибність (false)
+   </td>
+  </tr>
+  <tr>
+   <td>direction_id
+   </td>
+   <td>Напрямок руху
+   </td>
+   <td>Для позначення рейсів у напрямку маршруту використовується 0, у зворотному напрямку — 1. Наприклад: 0.
+   </td>
+   <td>Ціле число (integer)
+   </td>
+   <td>Хибність (false)
+   </td>
+  </tr>
+  <tr>
+   <td>block_id
+   </td>
+   <td>Блок рейсів
+   </td>
+   <td>Якщо один транспортний засіб виконує два і більше послідовних рейси за певним тижневим графіком, їх можна об’єднати у блоки. Кожен блок позначається довільним ідентифікатором. Наприклад: АВ1234ЕІ-01.
+   </td>
+   <td>Текст (string)
+   </td>
+   <td>Хибність (false)
+   </td>
+  </tr>
+  <tr>
+   <td>shape_id
+   </td>
+   <td>Лінія маршруту
+   </td>
+   <td>Якщо розпорядник використовує повну версію GTFS, необхідно зазначити ідентифікатор лінії маршруту з таблиці shapes. В іншому випадку лишити колонку вільною.
+   </td>
+   <td>Текст (string)
+   </td>
+   <td>Хибність (false)
+   </td>
+  </tr>
+  <tr>
+   <td>wheelchair_accessible
+   </td>
+   <td>Доступність
+   </td>
+   <td>Можливість проїзду для маломобільних груп населення кодується цифрами: 0 — невідомо, 1 — хоча б один пасажир, що належить до маломобільних груп, може здійснити поїздку; 2 — немає можливості проїзду для маломобільних груп. Наприклад: 1. Незаповнена колонка означає «невідомо».
+   </td>
+   <td>Ціле число (integer)
+   </td>
+   <td>Хибність (false)
+   </td>
+  </tr>
+  <tr>
+   <td>bikes_allowed
+   </td>
+   <td>Перевезення велосипедів
+   </td>
+   <td>Для позначення можливості перевезення велосипедів використовуються кодування: 0 — невідомо, 1 — можна взяти в поїздку щонайменше 1 велосипед, 2 — перевезення велосипедів заборонено. Наприклад: 1. Незаповнена колонка означає «невідомо».
+   </td>
+   <td>Ціле число (integer)
+   </td>
+   <td>Хибність (false)
+   </td>
+  </tr>
+</table>
+
+
+<h3 style="margin-bottom: 15px; margin-top: 30px;">3.2. Графік відбуття та прибуття транспорту до та від зупинок (ресурс stop_times)</h3>
+
+
+
+<table style="margin-bottom: 30px">
+  <tr>
+   <td colspan="2" ><strong><center>Інформація про ресурс</center></strong>
+   </td>
+  </tr>
+  <tr>
+   <td>Назва ресурсу
+   </td>
+   <td>stop_times
+   </td>
+  </tr>
+  <tr>
+   <td>Що є одним записом в таблиці (рядком)
+   </td>
+   <td>Відбуття/прибуття транспортного засобу на одній зупинці під час виконання рейсу.
+   </td>
+  </tr>
+  <tr>
+   <td>Спосіб оновлення
+   </td>
+   <td>Розміщення нової версії ресурсу
+   </td>
+  </tr>
+  <tr>
+   <td colspan="2" ><strong><center>Прикріплені файли</center></strong>
+   </td>
+  </tr>
+  <tr>
+   <td>Шаблон таблиці
+   </td>
+   <td><a href="https://github.com/tapas-opendata/decreet-835-mun/raw/master/transport/schedule/stop_times/stop_times.xlsx">stop_times.xlsx</a>
+   </td>
+  </tr>
+  <tr>
+   <td>Приклад таблиці
+   </td>
+   <td><a href="https://github.com/tapas-opendata/decreet-835-mun/raw/master/transport/schedule/stop_times/Example.xlsx">Example.xlsx</a>
+   </td>
+  </tr>
+  <tr>
+   <td>Структура (XLSX, CSV, JSON)
+   </td>
+   <td><a href="https://github.com/tapas-opendata/decreet-835-mun/raw/master/transport/schedule/stop_times/Structure.xlsx">Structure.xlsx</a>, <a href="https://raw.githubusercontent.com/tapas-opendata/decreet-835-mun/master/transport/schedule/stop_times/Structure.csv">Structure.csv</a>, <a href="https://raw.githubusercontent.com/tapas-opendata/decreet-835-mun/master/transport/schedule/stop_times/Structure.json">Structure.json</a>
+   </td>
+  </tr>
+</table>
+
+
+<p style="margin-bottom: 10px; text-align: center;"><strong>Таблиця 2 — Структура таблиці (ресурсу) stop_times</strong></p>
+
+<table style="margin-bottom: 30px">
+  <tr>
+   <td><strong>Назва колонки (name)</strong>
+   </td>
+   <td><strong>Заголовок колонки (title)</strong>
+   </td>
+   <td><strong>Опис значень (description)</strong>
+   </td>
+   <td><strong>Тип даних (datatype)</strong>
+   </td>
+   <td><strong>Вимога заповнення (required)</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>trip_id
+   </td>
+   <td>Ідентифікатор рейсу
+   </td>
+   <td>Ідентифікатор рейсу з таблиці trips (колонка trip_id). Наприклад: 25.
+   </td>
+   <td>Текст (string)
+   </td>
+   <td>Істина (true)
+   </td>
+  </tr>
+  <tr>
+   <td>arrival_time
+   </td>
+   <td>Час прибуття
+   </td>
+   <td>Час прибуття транспортного засобу на зупинку під час конкретного рейсу у форматі гг:хх:сс (24-годинний формат). Наприклад: 09:34:00. Якщо не визначено окремий час для прибуття і відправлення, у колонках arrival_time та departure_time записується однакове значення. Час прибуття обов’язково вказується для першої та останньої зупинки поїздки.
+   </td>
+   <td>Час (time)
+   </td>
+   <td>Істина (true)
+   </td>
+  </tr>
+  <tr>
+   <td>departure_time
+   </td>
+   <td>Час відправлення
+   </td>
+   <td>Час відправлення транспортного засобу від зупинки під час конкретного рейсу у форматі гг:хх:сс (24-годинний формат). Наприклад: 09:34:00. Якщо не визначено окремий час для прибуття і відправлення, у колонках arrival_time та departure_time записується однакове значення. Час прибуття обов’язково вказується для першої та останньої зупинки поїздки.
+   </td>
+   <td>Час (time)
+   </td>
+   <td>Істина (true)
+   </td>
+  </tr>
+  <tr>
+   <td>stop_id
+   </td>
+   <td>Ідентифікатор зупинки
+   </td>
+   <td>Ідентифікатор зупинки громадського транспорту або станції з таблиці stops (колонка stop_id).
+   </td>
+   <td>Текст (string)
+   </td>
+   <td>Істина (true)
+   </td>
+  </tr>
+  <tr>
+   <td>stop_sequence
+   </td>
+   <td>Порядок зупинки
+   </td>
+   <td>Порядковий номер зупинки на рейсі. Значення мають зростати, однак можуть бути непослідовними. Перша зупинка (відправлення) має номер 1, друга — 2, третя — 7. Наприклад: 2.
+   </td>
+   <td>Ціле число (integer)
+   </td>
+   <td>Істина (true)
+   </td>
+  </tr>
+  <tr>
+   <td>stop_headsign
+   </td>
+   <td>Напрямок руху
+   </td>
+   <td>Напрямок руху на рейсі з даної зупинки, що зазначається у графіках або на інформаційних табло. Наприклад: Індустріальний мікрорайон.
+   </td>
+   <td>Текст (string)
+   </td>
+   <td>Хибність (false)
+   </td>
+  </tr>
+  <tr>
+   <td>pickup_type
+   </td>
+   <td>Тип посадки
+   </td>
+   <td>Наявність зупинки руху для посадки пасажирів кодується такими цифрами: 0 — посадка проводиться регулярно відповідно до графіка, 1 — посадка пасажирів не проводиться. Наприклад: 0. Незаповнена колонка означає «посадка проводиться регулярно».
+   </td>
+   <td>Ціле число (integer)
+   </td>
+   <td>Хибність (false)
+   </td>
+  </tr>
+  <tr>
+   <td>drop_off_type
+   </td>
+   <td>Тип висадки
+   </td>
+   <td>Наявність зупинки руху для висадки пасажирів кодується такими цифрами: 0 — висадка проводиться регулярно відповідно до графіка, 1 — висадка пасажирів не проводиться. Наприклад: 0. Незаповнена колонка означає «висадка проводиться регулярно».
+   </td>
+   <td>Ціле число (integer)
+   </td>
+   <td>Хибність (false)
+   </td>
+  </tr>
+  <tr>
+   <td>shape_dist_traveled
+   </td>
+   <td>Подолана відстань
+   </td>
+   <td>Подолана відстань від початку поїздки у кілометрах. Розділювачем десяткових значень є крапка. Наприклад, якщо автобус здолав 5.25 км від початку поїздки до зупинки, вказується 5.25.
+   </td>
+   <td>Текст (string)
+   </td>
+   <td>Хибність (false)
+   </td>
+  </tr>
+  <tr>
+   <td>timepoint
+   </td>
+   <td>Точність
+   </td>
+   <td>Точність прибуття та відправлення транспорту від зупинки кодується такими числами: 0 — приблизний час, 1 — точний час. Порожня комірка означає точний час. Незаповнена колонка означає «точний час».
+   </td>
+   <td>Текст (string)
+   </td>
+   <td>Хибність (false)
+   </td>
+  </tr>
+</table>
+
+
+<h3 style="margin-bottom: 15px; margin-top: 30px;">3.3. Варіанти тижневих графіків роботи громадського транспорту (ресурс calendar)</h3>
+
+
+
+<table style="margin-bottom: 30px">
+  <tr>
+   <td colspan="2" ><strong><center>Інформація про ресурс</center></strong>
+   </td>
+  </tr>
+  <tr>
+   <td>Назва ресурсу
+   </td>
+   <td>calendar
+   </td>
+  </tr>
+  <tr>
+   <td>Що є одним записом в таблиці (рядком)
+   </td>
+   <td>Один тижневий графік роботи маршруту громадського транспорту. Маршрути можуть мати непостійний графік роботи, наприклад, працювати лише по буднях або непарних днях тижня тощо. У таблицю calendar заносяться всі можливі варіанти графіків.
+   </td>
+  </tr>
+  <tr>
+   <td>Спосіб оновлення
+   </td>
+   <td>Розміщення нової версії ресурсу
+   </td>
+  </tr>
+  <tr>
+   <td colspan="2" ><strong><center>Прикріплені файли</center></strong>
+   </td>
+  </tr>
+  <tr>
+   <td>Шаблон таблиці
+   </td>
+   <td><a href="https://github.com/tapas-opendata/decreet-835-mun/raw/master/transport/schedule/calendar/calendar.xlsx">calendar.xlsx</a>
+   </td>
+  </tr>
+  <tr>
+   <td>Приклад таблиці
+   </td>
+   <td><a href="https://github.com/tapas-opendata/decreet-835-mun/raw/master/transport/schedule/calendar/Example.xlsx">Example.xlsx</a>
+   </td>
+  </tr>
+  <tr>
+   <td>Структура (XLSX, CSV, JSON)
+   </td>
+   <td><a href="https://github.com/tapas-opendata/decreet-835-mun/raw/master/transport/schedule/calendar/Structure.xlsx">Structure.xlsx</a>, <a href="https://raw.githubusercontent.com/tapas-opendata/decreet-835-mun/master/transport/schedule/calendar/Structure.csv">Structure.csv</a>, <a href="https://raw.githubusercontent.com/tapas-opendata/decreet-835-mun/master/transport/schedule/calendar/Structure.json">Structure.json</a>
+   </td>
+  </tr>
+</table>
+
+
+<p style="margin-bottom: 10px; text-align: center;"><strong>Таблиця 3 — Структура таблиці (ресурсу) calendar</strong></p>
+
+<table style="margin-bottom: 30px">
+  <tr>
+   <td><strong>Назва колонки (name)</strong>
+   </td>
+   <td><strong>Заголовок колонки (title)</strong>
+   </td>
+   <td><strong>Опис значень (description)</strong>
+   </td>
+   <td><strong>Тип даних (datatype)</strong>
+   </td>
+   <td><strong>Вимога заповнення (required)</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>service_id
+   </td>
+   <td>Ідентифікатор
+   </td>
+   <td>Ідентифікатор тижневого графіка роботи маршруту громадського транспорту. Ідентифікатором може бути довільна послідовність літер та чисел. Наприклад: пн-вт-ср-чт-пт.
+   </td>
+   <td>Текст (string)
+   </td>
+   <td>Істина (true)
+   </td>
+  </tr>
+  <tr>
+   <td>monday
+   </td>
+   <td>Понеділок
+   </td>
+   <td>Якщо маршрут функціонує в понеділок, вказати 1, якщо ні — 0. Наприклад: 1.
+   </td>
+   <td>Ціле число (integer)
+   </td>
+   <td>Істина (true)
+   </td>
+  </tr>
+  <tr>
+   <td>tuesday
+   </td>
+   <td>Вівторок
+   </td>
+   <td>Якщо маршрут функціонує у вівторок, вказати 1, якщо ні — 0. Наприклад: 1.
+   </td>
+   <td>Ціле число (integer)
+   </td>
+   <td>Істина (true)
+   </td>
+  </tr>
+  <tr>
+   <td>wednesday
+   </td>
+   <td>Середа
+   </td>
+   <td>Якщо маршрут функціонує в середу, вказати 1, якщо ні — 0. Наприклад: 1.
+   </td>
+   <td>Ціле число (integer)
+   </td>
+   <td>Істина (true)
+   </td>
+  </tr>
+  <tr>
+   <td>thursday
+   </td>
+   <td>Четвер
+   </td>
+   <td>Якщо маршрут функціонує в четвер, вказати 1, якщо ні — 0. Наприклад: 1.
+   </td>
+   <td>Ціле число (integer)
+   </td>
+   <td>Істина (true)
+   </td>
+  </tr>
+  <tr>
+   <td>friday
+   </td>
+   <td>П’ятниця
+   </td>
+   <td>Якщо маршрут функціонує в п’ятницю, вказати 1, якщо ні — 0. Наприклад: 1.
+   </td>
+   <td>Ціле число (integer)
+   </td>
+   <td>Істина (true)
+   </td>
+  </tr>
+  <tr>
+   <td>saturday
+   </td>
+   <td>Субота
+   </td>
+   <td>Якщо маршрут функціонує в суботу, вказати 1, якщо ні — 0. Наприклад: 0.
+   </td>
+   <td>Ціле число (integer)
+   </td>
+   <td>Істина (true)
+   </td>
+  </tr>
+  <tr>
+   <td>sunday
+   </td>
+   <td>Неділя
+   </td>
+   <td>Якщо маршрут функціонує в неділю, вказати 1, якщо ні — 0. Наприклад: 1.
+   </td>
+   <td>Ціле число (integer)
+   </td>
+   <td>Істина (true)
+   </td>
+  </tr>
+  <tr>
+   <td>start_date
+   </td>
+   <td>Початок дії графіку
+   </td>
+   <td>Дата початку дії графіка у форматі ISO 8601 (рррр-мм-дд). Наприклад: 2018-06-01.
+   </td>
+   <td>Дата (date)
+   </td>
+   <td>Істина (true)
+   </td>
+  </tr>
+  <tr>
+   <td>end_date
+   </td>
+   <td>Завершення дії графіку
+   </td>
+   <td>Дата завершення дії графіка у форматі ISO 8601 (рррр-мм-дд). Цей день включається в інтервал. Наприклад: 2018-08-31.
+   </td>
+   <td>Дата (date)
+   </td>
+   <td>Істина (true)
+   </td>
+  </tr>
+</table>
+
+
+<h3 style="margin-bottom: 15px; margin-top: 30px;">3.4. Перелік винятків до тижневих графіків (ресурс calendar_dates)</h3>
+
+
+
+<table style="margin-bottom: 30px">
+  <tr>
+   <td colspan="2" ><strong><center>Інформація про ресурс</center></strong>
+   </td>
+  </tr>
+  <tr>
+   <td>Назва ресурсу
+   </td>
+   <td>calendar_dates
+   </td>
+  </tr>
+  <tr>
+   <td>Що є одним записом в таблиці (рядком)
+   </td>
+   <td>Одна дата винятку до тижневого графіка маршруту громадського транспорту. Це може бути пов’язано з урочистими заходами, ремонтними роботами тощо. Наприклад, якщо з 1-го до 5-го вересня внаслідок ремонту дороги маршрут не працюватиме, необхідно занести в таблицю всі 5 дат.
+   </td>
+  </tr>
+  <tr>
+   <td>Спосіб оновлення
+   </td>
+   <td>Розміщення нової версії ресурсу
+   </td>
+  </tr>
+  <tr>
+   <td colspan="2" ><strong><center>Прикріплені файли</center></strong>
+   </td>
+  </tr>
+  <tr>
+   <td>Шаблон таблиці
+   </td>
+   <td><a href="https://github.com/tapas-opendata/decreet-835-mun/raw/master/transport/schedule/calendar_dates/calendar_dates.xlsx">calendar_dates.xlsx</a>
+   </td>
+  </tr>
+  <tr>
+   <td>Приклад таблиці
+   </td>
+   <td><a href="https://github.com/tapas-opendata/decreet-835-mun/raw/master/transport/schedule/calendar_dates/Example.xlsx">Example.xlsx</a>
+   </td>
+  </tr>
+  <tr>
+   <td>Структура (XLSX, CSV, JSON)
+   </td>
+   <td><a href="https://github.com/tapas-opendata/decreet-835-mun/raw/master/transport/schedule/calendar_dates/Structure.xlsx">Structure.xlsx</a>, <a href="https://raw.githubusercontent.com/tapas-opendata/decreet-835-mun/master/transport/schedule/calendar_dates/Structure.csv">Structure.csv</a>, <a href="https://raw.githubusercontent.com/tapas-opendata/decreet-835-mun/master/transport/schedule/calendar_dates/Structure.json">Structure.json</a>
+   </td>
+  </tr>
+</table>
+
+
+<p style="margin-bottom: 10px; text-align: center;"><strong>Таблиця 4 — Структура таблиці (ресурсу) calendar_dates</strong></p>
+
+<table style="margin-bottom: 30px">
+  <tr>
+   <td><strong>Назва колонки (name)</strong>
+   </td>
+   <td><strong>Заголовок колонки (title)</strong>
+   </td>
+   <td><strong>Опис значень (description)</strong>
+   </td>
+   <td><strong>Тип даних (datatype)</strong>
+   </td>
+   <td><strong>Вимога заповнення (required)</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>service_id
+   </td>
+   <td>Ідентифікатор
+   </td>
+   <td>Ідентифікатор винятку в графіку руху може складатися з довільної комбінації цифр та літер. Наприклад: independence-day. Також ідентифікатором винятку може бути ідентифікатор тижневого графіка роботи маршруту з таблиці calendar (колонка service_id).
+   </td>
+   <td>Текст (string)
+   </td>
+   <td>Істина (true)
+   </td>
+  </tr>
+  <tr>
+   <td>date
+   </td>
+   <td>Дата
+   </td>
+   <td>Дата винятку у форматі ISO 8601 (рррр-мм-дд). Наприклад: 2018-08-24.
+   </td>
+   <td>Дата (date)
+   </td>
+   <td>Істина (true)
+   </td>
+  </tr>
+  <tr>
+   <td>exception_type
+   </td>
+   <td>Тип винятку
+   </td>
+   <td>Тип винятку визначає, чи працює маршрут у дату, що зазначена в колонці date. Для цього використовуються такі коди: 1 — перевезення відбуваються; 2 — перевезення не відбуваються.
+   </td>
+   <td>Текст (string)
+   </td>
+   <td>Істина (true)
+   </td>
+  </tr>
+</table>
+
+
+<h2 style="margin-bottom: 15px; margin-top: 50px;">4. Оформлення паспортів наборів та ресурсів</h2>
+
+
+
+
+
+<div style="margin-bottom: 25px; background-color:#F4F7FA; padding: 20px"><p><b>Зверніть увагу!</b> Назва набору має відповідати Переліку, затвердженому <a href="https://zakon.rada.gov.ua/laws/show/835-2015-%D0%BF">Постановою КМУ № 835 (зі змінами)</a>. Також вона може включати назву розпорядника або населеного пункту, з яким пов'язані дані. Це полегшує пошук набору в пошукових системах.</p></div>
+
+
+<p style="margin-bottom: 10px; text-align: center;"><strong>Таблиця 5 — Приклад паспорта набору даних на data.gov.ua</strong></p>
+
+<table style="margin-bottom: 30px">
+  <tr>
+   <td><strong>Назва поля</strong>
+   </td>
+   <td><strong>Приклад заповнення</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>Назва набору
+   </td>
+   <td>Розклад руху громадського транспорту міста Славутич
+   </td>
+  </tr>
+  <tr>
+   <td>Відомості про мову інформації, яка міститься у наборі
+   </td>
+   <td>Українська
+   </td>
+  </tr>
+  <tr>
+   <td>Частота оновлення
+   </td>
+   <td>Щомісяця
+   </td>
+  </tr>
+  <tr>
+   <td>Опис
+   </td>
+   <td>Набір містить дані про суб’єктів господарювання, що надають послуги громадського транспорту (ресурс agency); дані про зупинки громадського транспорту (ресурс stops); дані про маршрути громадського транспорту (ресурс routes); дані про рейси громадського транспорту (ресурс trips); графік відбуття та прибуття транспорту до та від зупинок (ресурс stop_times); варіанти тижневих графіків роботи громадського транспорту (ресурс calendar); перелік винятків до тижневих графіків (ресурс calendar_dates).
+   </td>
+  </tr>
+  <tr>
+   <td>Підстава та призначення збору інформації
+   </td>
+   <td>Закон України «Про місцеве самоврядування в Україні», Наказ Мінтрансзв'язку України від 07.05.2010 № 278, Наказ Мінінфраструктури від 15.07.2013 № 480
+   </td>
+  </tr>
+  <tr>
+   <td>Ключові слова
+   </td>
+   <td>графік, транспорт, перевізники, автобус, тролейбус, трамвай, маршрут, відбуття, прибуття, час, GTFS, громадський транспорт, графік руху
+   </td>
+  </tr>
+  <tr>
+   <td>Відповідальна особа
+   </td>
+   <td>Симоненко Олена Петрівна
+   </td>
+  </tr>
+  <tr>
+   <td>Адреса електронної пошти відповідальної особи
+   </td>
+   <td>o.symonenko@example.gov.ua
+   </td>
+  </tr>
+</table>
+
+
+<p style="margin-bottom: 10px; text-align: center;"><strong>Таблиця 6 — Приклад паспорта ресурсу agency</strong></p>
+
+<table style="margin-bottom: 30px">
+  <tr>
+   <td><strong>Назва поля</strong>
+   </td>
+   <td><strong>Приклад заповнення</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>Назва ресурсу
+   </td>
+   <td>agency
+   </td>
+  </tr>
+  <tr>
+   <td>Опис
+   </td>
+   <td>Таблиця містить назви, ідентифікатори та контактні дані суб’єктів господарювання, що надають послуги пасажирського автомобільного транспорту. Кожним записом в таблиці є один перевізник.
+   </td>
+  </tr>
+  <tr>
+   <td>Формат
+   </td>
+   <td>XLSX
+   </td>
+  </tr>
+</table>
+
+
+<p style="margin-bottom: 10px; text-align: center;"><strong>Таблиця 7 — Приклад паспорта ресурсу routes</strong></p>
+
+<table style="margin-bottom: 30px">
+  <tr>
+   <td><strong>Назва поля</strong>
+   </td>
+   <td><strong>Приклад заповнення</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>Назва ресурсу
+   </td>
+   <td>routes.xlsx
+   </td>
+  </tr>
+  <tr>
+   <td>Опис
+   </td>
+   <td>Таблиця містить назву, опис, тип транспортних засобів, колір позначення на схемах маршрутів громадського транспорту, а також ідентифікатори перевізників, що обслуговують маршрути. Кожним записом в таблиці є маршрут на якому виконує перевезення один перевізник.
+   </td>
+  </tr>
+  <tr>
+   <td>Формат
+   </td>
+   <td>XLSX
+   </td>
+  </tr>
+</table>
+
+
+<p style="margin-bottom: 10px; text-align: center;"><strong>Таблиця 8 — Приклад паспорта ресурсу stops</strong></p>
+
+<table style="margin-bottom: 30px">
+  <tr>
+   <td><strong>Назва поля</strong>
+   </td>
+   <td><strong>Приклад заповнення</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>Назва ресурсу
+   </td>
+   <td>stops.xlsx
+   </td>
+  </tr>
+  <tr>
+   <td>Опис
+   </td>
+   <td>Таблиця містить дані про ідентифікатори, коди, назви, опис, місцезнаходження (адреса, географічні координати), доступність та інші характеристики зупинок громадського транспорту. Кожним записом до таблиці є одна зупинка.
+   </td>
+  </tr>
+  <tr>
+   <td>Формат
+   </td>
+   <td>XLSX
+   </td>
+  </tr>
+</table>
+
+
+<p style="margin-bottom: 10px; text-align: center;"><strong>Таблиця 9 — Приклад паспорта ресурсу trips</strong></p>
+
+<table style="margin-bottom: 30px">
+  <tr>
+   <td><strong>Назва поля</strong>
+   </td>
+   <td><strong>Приклад заповнення</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>Назва ресурсу
+   </td>
+   <td>trips.xlsx
+   </td>
+  </tr>
+  <tr>
+   <td>Опис
+   </td>
+   <td>Таблиця містить дані про маршрут, тижневий графік роботи, ідентифікатор, кінцеву зупинку, напрямок руху, назву та інші характеристики рейсів громадського транспорту. Кожним записом до таблиці є один рейс громадського транспорту на маршруті.
+   </td>
+  </tr>
+  <tr>
+   <td>Формат
+   </td>
+   <td>XLSX
+   </td>
+  </tr>
+</table>
+
+
+<p style="margin-bottom: 10px; text-align: center;"><strong>Таблиця 10 — Приклад паспорта ресурсу stop_times</strong></p>
+
+<table style="margin-bottom: 30px">
+  <tr>
+   <td><strong>Назва поля</strong>
+   </td>
+   <td><strong>Приклад заповнення</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>Назва ресурсу
+   </td>
+   <td>stop_times.xlsx
+   </td>
+  </tr>
+  <tr>
+   <td>Опис
+   </td>
+   <td>Таблиця містить ідентифікатор рейсу, зупинки, час прибуття та відправлення, напрямок руху, умови зупинки, порядок зупинки на рейсі, подолану відстань та інші характеристики. Кожним записом до таблиці є відбуття/прибуття транспортного засобу на одній зупинці під час виконання рейсу.
+   </td>
+  </tr>
+  <tr>
+   <td>Формат
+   </td>
+   <td>XLSX
+   </td>
+  </tr>
+</table>
+
+
+<p style="margin-bottom: 10px; text-align: center;"><strong>Таблиця 11 — Приклад паспорта ресурсу calendar</strong></p>
+
+<table style="margin-bottom: 30px">
+  <tr>
+   <td><strong>Назва поля</strong>
+   </td>
+   <td><strong>Приклад заповнення</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>Назва ресурсу
+   </td>
+   <td>calendar.xlsx
+   </td>
+  </tr>
+  <tr>
+   <td>Опис
+   </td>
+   <td>Таблиця містить варіанти тижневих графіків роботи громадського транспорту, а також дати початку та завершення їх дії. Кожним записом до таблиці є один тижневий графік роботи маршруту громадського транспорту.
+   </td>
+  </tr>
+  <tr>
+   <td>Формат
+   </td>
+   <td>XLSX
+   </td>
+  </tr>
+</table>
+
+
+<p style="margin-bottom: 10px; text-align: center;"><strong>Таблиця 12 — Приклад паспорта ресурсу calendar_dates</strong></p>
+
+<table style="margin-bottom: 30px">
+  <tr>
+   <td><strong>Назва поля</strong>
+   </td>
+   <td><strong>Приклад заповнення</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>Назва ресурсу
+   </td>
+   <td>calendar_dates.xlsx
+   </td>
+  </tr>
+  <tr>
+   <td>Опис
+   </td>
+   <td>Таблиця містить перелік дат, коли рух громадського транспорту не відповідає тижневим графікам. Кожним записом до таблиці є одна дата винятку до тижневого графіка маршруту руху громадського транспорту. 
+   </td>
+  </tr>
+  <tr>
+   <td>Формат
+   </td>
+   <td>XLSX
+   </td>
+  </tr>
+</table>
+
