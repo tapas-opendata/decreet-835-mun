@@ -59,10 +59,12 @@ https://data.gov.ua/pages/835-recm-budget-contracts
 
 <h2 style="margin-bottom: 15px; margin-top: 50px;">2. Огляд нормативно-правової бази</h2>
 
+
 <p style="margin-bottom: 25px">
 Облік та оприлюднення даних про договори відбувається відповідно до положень профільного законодавства, зокрема, <a href="https://zakon.rada.gov.ua/laws/show/183-19">Закону України «Про відкритість використання публічних коштів»</a>, <a href="https://zakon.rada.gov.ua/laws/show/922-19">Закону України «Про публічні закупівлі»</a>, <a href="https://zakon.rada.gov.ua/laws/show/2269-12">Закону України «Про оренду державного та комунального майна»</a>, <a href="https://zakon.rada.gov.ua/laws/show/2768-14">Земельного кодексу України</a>, <a href="https://zakon.rada.gov.ua/laws/show/270/96-%D0%B2%D1%80">Закон України «Про рекламу» від 03.07.1996 № 270/96-ВР</a> та інших нормативно-правових актів.
 </p>
 <h2 style="margin-bottom: 15px; margin-top: 50px;">3. Підготовка даних та структура набору</h2>
+
 
 <h3 style="margin-bottom: 15px; margin-top: 30px;">3.1. Дані про договори щодо використання публічних коштів</h3>
 
@@ -70,15 +72,14 @@ https://data.gov.ua/pages/835-recm-budget-contracts
 <p style="margin-bottom: 25px">
 Більшість договорів органів місцевого самоврядування стосуються використання публічних коштів і підлягають оприлюдненню на Єдиному веб-порталі використання публічних коштів (<a href="https://spending.gov.ua/">Spending.gov.ua</a>) та в Єдиній системі електронних публічних закупівель ПроЗорро (<a href="https://prozorro.gov.ua/">Prozorro.gov.ua</a>). Тому дублювати ці дані в окремому переліку недоцільно. Натомість набагато ефективніше оприлюднити їх через API (інтерфейс прикладного програмування) <a href="https://spending.gov.ua/">Spending.gov.ua</a> у форматі JSON. Для цього необхідно сформувати посилання (кінцеву точку), за яким користувачі зможуть отримати дані певного розпорядника з бази даних порталу. Наприклад, для отримання переліку договорів посилання матиме вигляд:
 </p>
-<pre style="margin-bottom: 25px; padding: 10px"><code><p>http://api.spending.gov.ua/api/v2/disposers/contracts?disposerId=<strong>ЄДРПОУ Розпорядника</strong>
-</pre></code>
+<pre style="margin-bottom: 25px; padding: 10px"><code><p>http://api.spending.gov.ua/api/v2/disposers/contracts?disposerId=<strong>ЄДРПОУ Розпорядника</strong></p></code></pre>
 
 <p style="margin-bottom: 25px">
 Останню частину (ЄДРПОУ Розпорядника) необхідно замінити на 8 чисел коду ЄДРПОУ розпорядника бюджетних коштів. Наприклад, у випадку Дніпровської міської ради (код ЄДРПОУ — 26510514) посилання буде наступним:
 </p>
 
 <pre style="margin-bottom: 25px; padding: 10px"><code><p>http://api.spending.gov.ua/api/v2/disposers/contracts?disposerId=26510514
-</pre></code>
+</p></pre></code>
 
 <p style="margin-bottom: 25px">
 Якщо скопіювати його в адресний рядок веб-переглядача (Google Chrome або Mozilla Firefox) і натиснути перейти, то можна отримати дані у форматі JSON. Перше число "size":471 вказує на загальну кількість доступних документів.
@@ -86,7 +87,9 @@ https://data.gov.ua/pages/835-recm-budget-contracts
 
 <p style="margin-bottom: 10px; text-align: center;"><strong>Рисунок 1 — Приклад даних spending.gov.ua у форматі JSON</strong></p>
 
-<img src="https://raw.githubusercontent.com/tapas-opendata/decreet-835-mun/master/img/spending-sample.png" width="75%" alt="Приклад даних spending.gov.ua у форматі JSON">
+
+<p style="margin-bottom: 25px; text-align: center;"><img src="https://raw.githubusercontent.com/tapas-opendata/decreet-835-mun/master/_img/spending-sample.png" width="70%"  alt="Приклад даних spending.gov.ua у форматі JSON"></p>
+
 
 <p style="margin-bottom: 25px">Для отримання різних типів документів у <a href="https://spending.gov.ua/">Spending.gov.ua</a> використовуються різні кінцеві точки (див. Таблицю 1).</p>
 
@@ -181,7 +184,7 @@ https://data.gov.ua/pages/835-recm-budget-contracts
   <tr>
    <td>Шаблон таблиці
    </td>
-   <td><a href="https://github.com/tapas-opendata/decreet-835-mun/raw/master/budget/contracts/contracts/Сontracts.xlsx">Contracts.xlsx</a>
+   <td><a href="https://github.com/tapas-opendata/decreet-835-mun/raw/master/budget/contracts/contracts/Contracts.xlsx">Contracts.xlsx</a>
    </td>
   </tr>
   <tr>
@@ -367,7 +370,7 @@ https://data.gov.ua/pages/835-recm-budget-contracts
   <tr>
    <td>status
    </td>
-   <td>Статус	 договору
+   <td>Статус  договору
    </td>
    <td>Статус договору може мати одне зі значень: Чинний, Виконаний, Розірваний, Скасований. Наприклад: Чинний.
    </td>
