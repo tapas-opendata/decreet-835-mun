@@ -1,0 +1,633 @@
+<!-----
+
+Дані про доступність будівель для осіб з інвалідністю та інших маломобільних груп населення
+https://data.gov.ua/pages/835-recm-infrastructure-accessibility
+
+----->
+
+
+<h2 style="margin-bottom: 15px; margin-top: 50px;">1. Коротка довідка</h2>
+
+
+
+<table style="margin-bottom: 30px">
+  <tr>
+   <td><strong>Критерій</strong>
+   </td>
+   <td><strong>Характеристика</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>Нормативно-правові акти, які визначають створення, збір, зберігання, використання й поширення даних
+   </td>
+   <td><a href="https://zakon.rada.gov.ua/laws/show/3038-17">Закон України «Про регулювання містобудівної діяльності» від 17.02.2011 № 3038-VI</a>, <a href="https://zakon.rada.gov.ua/laws/show/2807-15">Закон України «Про благоустрій населених пунктів» від 06.09.2005 № 2807-IV</a>, <a href="https://zakon.rada.gov.ua/laws/show/875-12">Закон України «Про основи соціальної захищеності осіб з інвалідністю в Україні» від 21.03.1991 № 875-XII</a>, <a href="https://zakon.rada.gov.ua/laws/show/553-2011-%D0%BF">Постанова КМУ «Про затвердження Порядку здійснення державного архітектурно-будівельного контролю» від 23.05.2011 № 553</a>
+   </td>
+  </tr>
+  <tr>
+   <td>Інформація, що створюється, збирається, зберігається й поширюється
+   </td>
+   <td>Інформація про доступність будинків та споруд фіксується під час архітектурно-будівельного контролю (ДБН В.2.2-40:2018, ДБН В.2.3-5:2018) або моніторингу доступності об’єктів. 
+   </td>
+  </tr>
+  <tr>
+   <td>Способи оновлення
+   </td>
+   <td>Здійснення архітектурно-будівельного контролю, проведення моніторингу доступності об’єктів
+   </td>
+  </tr>
+  <tr>
+   <td>Частота оновлення інформації
+   </td>
+   <td>Позапланово (протягом трьох робочих днів з моменту внесення змін) або в інші терміни, що визначені періодичністю моніторингу
+   </td>
+  </tr>
+  <tr>
+   <td>Тип даних
+   </td>
+   <td>Структуровані
+   </td>
+  </tr>
+  <tr>
+   <td>Формати файлів
+   </td>
+   <td>XLSX, ODS, CSV, можливі інші формати структурованих даних
+   </td>
+  </tr>
+</table>
+
+
+<h2 style="margin-bottom: 15px; margin-top: 50px;">2. Огляд нормативно-правової бази</h2>
+
+
+<p style="margin-bottom: 25px">
+Відповідно до <a href="https://zakon.rada.gov.ua/laws/show/3038-17">Закону України «Про регулювання містобудівної діяльності»</a> органи державного архітектурного-будівельного контролю здійснюють нагляд за дотриманням законодавства у сфері містобудівної діяльності, вимог будівельних норм, державних стандартів і правил тощо. Вимоги до доступності будівель та споруд визначені <a href="http://www.minregion.gov.ua/wp-content/uploads/2019/01/V2240-2018.pdf">ДБН В.2.2-40:2018 Інклюзивність будівель і споруд. Основні положення</a>. Вимоги до доступності вулиць, доріг та територій — <a href="http://www.minregion.gov.ua/wp-content/uploads/2018/06/V235_InBul.pdf">ДБН В.2.3-5:2018 Вулиці та дороги населених пунктів</a>, <a href="http://www.minregion.gov.ua/wp-content/uploads/2017/12/24.1.-DBN-B.2.2-52011.-Planuvannya-ta-zabudova-mist-sel.pdf">ДБН Б.2.2-5-2011 Благоустрій територій</a>. Порядок здійснення архітектурно-будівельного контролю затверджений <a href="https://zakon.rada.gov.ua/laws/show/257-2017-%D0%BF">Постановою КМУ від 23.05.2011 № 553</a>. 
+</p>
+<p style="margin-bottom: 25px">
+Моніторинги доступності будівель можуть проводитись органами місцевого самоврядування та громадськими організаціями відповідно до ст. 27 <a href="https://zakon.rada.gov.ua/laws/show/875-12">Закону України «Про основи соціальної захищеності осіб з інвалідністю в Україні»</a>, <a href="https://zakon.rada.gov.ua/rada/show/v0300667-06">Наказу Мінбуду України, Мінпраці України від 08.09.2006 № 300/339</a>.
+</p>
+<h2 style="margin-bottom: 15px; margin-top: 50px;">3. Підготовка даних та структура набору</h2>
+
+
+<p style="margin-bottom: 25px">
+Під час перевірки доступності будинків та споруд рекомендовано використовувати 
+</p>
+<p style="margin-bottom: 25px">
+методологію, запропоновану <a href="https://dabi.gov.ua/phocadownload/to/r_e_k_o_m_e_n_d_a_ts____shchodo_perevrki_obktv_budvnitstva_na_dotrimannya_vimog_dostupnost_dlya_malomoblnikh_grup_naselennya.pdf">ВГО «Національна Асамблея людей з інвалідністю України»</a>. Вона передбачає формування переліку вимог і подальший аналіз їх дотримання у проінспектованих об’єктах (<a href="https://dabi.gov.ua/wp-content/uploads/2018/06/edited_Dorozhnya-karta.pdf">Додаток 1</a>). Залежно від типу будинку або споруди (школа, лікарня, адміністративна будівля) перелік вимог може змінюватись. Таким чином, набір включатиме дві таблиці:
+</p>
+<ol style="margin-left: 30px">
+
+<li style="margin-bottom: 10px;"><strong>Buildings</strong> — довідник будинків та споруд, в яких здійснені перевірки або моніторинг;
+
+<li style="margin-bottom: 10px;"><strong>Norms</strong> — перелік вимог державних будівельних норм і стан їх дотримання в будівлях та спорудах (ресурс Norms).
+</li>
+</ol>
+<h3 style="margin-bottom: 15px; margin-top: 30px;">3.1. Довідник будинків, в яких здійснені перевірки або моніторинг (ресурс Buildings)</h3>
+
+
+
+<table style="margin-bottom: 30px">
+  <tr>
+   <td colspan="2" ><strong><center>Інформація про ресурс</center></strong>
+   </td>
+  </tr>
+  <tr>
+   <td>Назва ресурсу
+   </td>
+   <td>Buildings
+   </td>
+  </tr>
+  <tr>
+   <td>Що є одним записом в таблиці (рядком)
+   </td>
+   <td>Один будинок або споруда
+   </td>
+  </tr>
+  <tr>
+   <td>Спосіб оновлення
+   </td>
+   <td>Розміщення нової версії ресурсу
+   </td>
+  </tr>
+  <tr>
+   <td colspan="2" ><strong><center>Прикріплені файли</center></strong>
+   </td>
+  </tr>
+  <tr>
+   <td>Шаблон таблиці
+   </td>
+   <td><a href="https://github.com/tapas-opendata/decreet-835-mun/raw/master/infrastructure/accessibility/buildings/Buildings.xlsx">Buildings.xlsx</a>
+   </td>
+  </tr>
+  <tr>
+   <td>Приклад таблиці
+   </td>
+   <td><a href="https://github.com/tapas-opendata/decreet-835-mun/raw/master/infrastructure/accessibility/buildings/Example.xlsx">Example.xlsx</a>
+   </td>
+  </tr>
+  <tr>
+   <td>Структура (XLSX, CSV, JSON)
+   </td>
+   <td><a href="https://github.com/tapas-opendata/decreet-835-mun/raw/master/infrastructure/accessibility/buildings/Structure.xlsx">Structure.xlsx</a>, <a href="https://raw.githubusercontent.com/tapas-opendata/decreet-835-mun/master/infrastructure/accessibility/buildings/Structure.csv">Structure.csv</a>, <a href="https://raw.githubusercontent.com/tapas-opendata/decreet-835-mun/master/infrastructure/accessibility/buildings/Structure.json">Structure.json</a>
+   </td>
+  </tr>
+</table>
+
+
+
+
+
+<div style="margin-bottom: 25px; background-color:#F4F7FA; padding: 20px"><p><b>Зверніть увагу!</b> Набір необхідно готувати й вести в електронних таблицях Microsoft Excel, LibreOffice Calc або Google Таблицях. Для оприлюднення набору використовуються формати XLSX, ODS, CSV. На портал достатньо завантажити XLSX або ODS книгу, що містить один аркуш. За таких умов ресурс потрапить у базу даних порталу (сховище даних) і його CSV-версія згенерується автоматично. Також дані будуть доступними в форматі JSON через <a href="https://docs.ckan.org/en/latest/maintaining/datastore.html">API порталу</a>.</p></div>
+
+
+<p style="margin-bottom: 10px; text-align: center;"><strong>Таблиця 1 — Структура таблиці (ресурсу) Buildings</strong></p>
+
+<table style="margin-bottom: 30px">
+  <tr>
+   <td><strong>Назва колонки (name)</strong>
+   </td>
+   <td><strong>Заголовок колонки (title)</strong>
+   </td>
+   <td><strong>Опис значень (description)</strong>
+   </td>
+   <td><strong>Тип даних (datatype)</strong>
+   </td>
+   <td><strong>Вимога заповнення (required)</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>identifier
+   </td>
+   <td>Ідентифікатор
+   </td>
+   <td>Порядковий номер або будь-який інший ідентифікатор будинку або споруди. Наприклад: 0015.
+   </td>
+   <td>Текст (string)
+   </td>
+   <td>Істина (true)
+   </td>
+  </tr>
+  <tr>
+   <td>date
+   </td>
+   <td>Дата
+   </td>
+   <td>Дата проведення перевірки/моніторингу у форматі ISO 8601 (рррр-мм-дд). Наприклад: 2014-05-30.
+   </td>
+   <td>Дата (date)
+   </td>
+   <td>Істина (true)
+   </td>
+  </tr>
+  <tr>
+   <td>authorityName
+   </td>
+   <td>Назва органу
+   </td>
+   <td>Назва органу, що здійснив перевірку/моніторинг. Наприклад: Департамент державного архітектурно-будівельного контролю Херсонської міської ради.
+   </td>
+   <td>Текст (string)
+   </td>
+   <td>Істина (true)
+   </td>
+  </tr>
+  <tr>
+   <td>authoritytIdentifier
+   </td>
+   <td>Ідентифікатор органу
+   </td>
+   <td>Код ЄДРПОУ органу, що здійснив перевірку/моніторинг. Наприклад: 01234567.
+   </td>
+   <td>Текст (string)
+   </td>
+   <td>Істина (true)
+   </td>
+  </tr>
+  <tr>
+   <td>entityName
+   </td>
+   <td>Ім'я або назва суб’єкта
+   </td>
+   <td>Прізвище, ім’я, по батькові або назва юридичної особи суб’єкта містобудування, що є відповідальним за дотримання вимог доступності будівель та споруд. Наприклад: КП «Херсонська міська поліклініка №1».
+   </td>
+   <td>Текст (string)
+   </td>
+   <td>Істина (true)
+   </td>
+  </tr>
+  <tr>
+   <td>entityIdentifier
+   </td>
+   <td>Ідентифікатор суб’єкта
+   </td>
+   <td>Код ЄДРПОУ суб’єкта містобудування, що є відповідальним за дотримання вимог доступності будівель та споруд. Наприклад: 01234567. У випадку ФОП, дані про РНОКПП знеособлюються.
+   </td>
+   <td>Текст (string)
+   </td>
+   <td>Хибність (false)
+   </td>
+  </tr>
+  <tr>
+   <td>name
+   </td>
+   <td>Назва об'єкта
+   </td>
+   <td>Назва будівлі/споруди. Наприклад: Головний корпус Поліклініки №1.
+   </td>
+   <td>Текст (string)
+   </td>
+   <td>Істина (true)
+   </td>
+  </tr>
+  <tr>
+   <td>addressPostCode
+   </td>
+   <td>Поштовий індекс
+   </td>
+   <td>Поштовий індекс адреси будівлі/споруди. Наприклад: 01234.
+   </td>
+   <td>Текст (string)
+   </td>
+   <td>Істина (true)
+   </td>
+  </tr>
+  <tr>
+   <td>addressAdminUnitL1
+   </td>
+   <td>Країна
+   </td>
+   <td>Назва країни. У колонці має бути зазначено Україна.
+   </td>
+   <td>Текст (string)
+   </td>
+   <td>Істина (true)
+   </td>
+  </tr>
+  <tr>
+   <td>addressAdminUnitL2
+   </td>
+   <td>Регіон
+   </td>
+   <td>Назва регіону, де розміщена будівля/споруда. Наприклад: Полтавська область.
+   </td>
+   <td>Текст (string)
+   </td>
+   <td>Істина (true)
+   </td>
+  </tr>
+  <tr>
+   <td>addressAdminUnitL3
+   </td>
+   <td>Район
+   </td>
+   <td>Назва району. Наприклад: Броварський район. У разі відсутності вказати null.
+   </td>
+   <td>Текст (string)
+   </td>
+   <td>Хибність (false)
+   </td>
+  </tr>
+  <tr>
+   <td>addressPostName
+   </td>
+   <td>Населений пункт
+   </td>
+   <td>Назва населеного пункту або назва селищної чи сільської ради. У колонці потрібно зазначати лише назву (без слова «місто», «селищна рада» та їх скорочень «м.» та «с. р.»). Наприклад: Балта.
+   </td>
+   <td>Текст (string)
+   </td>
+   <td>Істина (true)
+   </td>
+  </tr>
+  <tr>
+   <td>addressThoroughfare
+   </td>
+   <td>Вулиця або аналог
+   </td>
+   <td>Тип та назва площі, майдану, шосе, проспекту, бульвару, алеї, провулку, узвозу тощо. Наприклад: вул. Харківська.
+   </td>
+   <td>Текст (string)
+   </td>
+   <td>Істина (true)
+   </td>
+  </tr>
+  <tr>
+   <td>addressLocatorDesignator
+   </td>
+   <td>Номер будівлі
+   </td>
+   <td>Номер будівлі (об’єкта) може включати числа та букви. Наприклад: 15-А.
+   </td>
+   <td>Текст (string)
+   </td>
+   <td>Істина (true)
+   </td>
+  </tr>
+  <tr>
+   <td>addressLocatorBuilding
+   </td>
+   <td>Номер корпусу
+   </td>
+   <td>Номер корпусу зазнається числом для об’єктів, які складаються з декількох корпусів. Наприклад: 3. У разі відсутності вказати null.
+   </td>
+   <td>Текст (string)
+   </td>
+   <td>Хибність (false)
+   </td>
+  </tr>
+</table>
+
+
+<h3 style="margin-bottom: 15px; margin-top: 30px;">3.2. Перелік вимог державних будівельних норм і стан їх дотримання в будівлях та спорудах (ресурс Norms)</h3>
+
+
+
+<table style="margin-bottom: 30px">
+  <tr>
+   <td colspan="2" ><strong><center>Інформація про ресурс</center></strong>
+   </td>
+  </tr>
+  <tr>
+   <td>Назва ресурсу
+   </td>
+   <td>Norms
+   </td>
+  </tr>
+  <tr>
+   <td>Що є одним записом в таблиці (рядком)
+   </td>
+   <td>Один пункт державних будівельних норм, контроль дотримання якого здійснюється в одному будинку або споруді.
+   </td>
+  </tr>
+  <tr>
+   <td>Спосіб оновлення
+   </td>
+   <td>Розміщення нової версії ресурсу, створення нових ресурсів для будинків і споруд, де відбулося інспектування/моніторинг.
+   </td>
+  </tr>
+  <tr>
+   <td colspan="2" ><strong><center>Прикріплені файли</center></strong>
+   </td>
+  </tr>
+  <tr>
+   <td>Шаблон таблиці
+   </td>
+   <td><a href="https://github.com/tapas-opendata/decreet-835-mun/raw/master/infrastructure/accessibility/norms/Norms.xlsx">Norms.xlsx</a>
+   </td>
+  </tr>
+  <tr>
+   <td>Приклад таблиці
+   </td>
+   <td><a href="https://github.com/tapas-opendata/decreet-835-mun/raw/master/infrastructure/accessibility/norms/Example.xlsx">Example.xlsx</a>
+   </td>
+  </tr>
+  <tr>
+   <td>Структура (XLSX, CSV, JSON)
+   </td>
+   <td><a href="https://github.com/tapas-opendata/decreet-835-mun/raw/master/infrastructure/accessibility/norms/Structure.xlsx">Structure.xlsx</a>, <a href="https://raw.githubusercontent.com/tapas-opendata/decreet-835-mun/master/infrastructure/accessibility/norms/Structure.csv">Structure.csv</a>, <a href="https://raw.githubusercontent.com/tapas-opendata/decreet-835-mun/master/infrastructure/accessibility/norms/Structure.json">Structure.json</a>
+   </td>
+  </tr>
+</table>
+
+
+<p style="margin-bottom: 10px; text-align: center;"><strong>Таблиця 2 — Структура таблиці (ресурсу) Norms</strong></p>
+
+<table style="margin-bottom: 30px">
+  <tr>
+   <td><strong>Назва колонки (name)</strong>
+   </td>
+   <td><strong>Заголовок колонки (title)</strong>
+   </td>
+   <td><strong>Опис значень (description)</strong>
+   </td>
+   <td><strong>Тип даних (datatype)</strong>
+   </td>
+   <td><strong>Вимога заповнення (required)</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>normsNumber
+   </td>
+   <td>Державні будівельні норми
+   </td>
+   <td>Номер державних будівельних норм, на відповідність яким проводиться перевірка або моніторинг. Наприклад: ДБН В.2.2-40:2018.
+   </td>
+   <td>Текст (string)
+   </td>
+   <td>Істина (true)
+   </td>
+  </tr>
+  <tr>
+   <td>paragraphNumber
+   </td>
+   <td>Номер пункту
+   </td>
+   <td>Номер пункту державних будівельних норм. Наприклад: 5.3.2
+   </td>
+   <td>Текст (string)
+   </td>
+   <td>Істина (true)
+   </td>
+  </tr>
+  <tr>
+   <td>paragraphDescription
+   </td>
+   <td>Норма
+   </td>
+   <td>Норма, що визначена пунктом (допустимий скорочений виклад). Наприклад: Зовнішні пандуси повинні мати двобічне огородження з поручнями.
+   </td>
+   <td>Текст (string)
+   </td>
+   <td>Істина (true)
+   </td>
+  </tr>
+  <tr>
+   <td>status
+   </td>
+   <td>Стан відповідності
+   </td>
+   <td>Стан відповідності об’єкта вимогам норми може мати одне із двох значень: Так, Ні. Наприклад: Ні.
+   </td>
+   <td>Текст (string)
+   </td>
+   <td>Істина (true)
+   </td>
+  </tr>
+  <tr>
+   <td>description
+   </td>
+   <td>Опис
+   </td>
+   <td>Опис може містити примітки, виявлені розміри, відхилення тощо. Наприклад: Пандус огороджений поручнем лише з правого боку.
+   </td>
+   <td>Текст (string)
+   </td>
+   <td>Істина (true)
+   </td>
+  </tr>
+  <tr>
+   <td>image
+   </td>
+   <td>Фото
+   </td>
+   <td>Посилання на фото елемента будівлі або споруди, якого стосуються вимоги норми (URL). Посилання має починатися з http:// або https://. Наприклад: https://www.example.gov.ua/photo.png. Якщо фото відсутнє, вказати null.
+   </td>
+   <td>Посилання (anyURI)
+   </td>
+   <td>Хибність (false)
+   </td>
+  </tr>
+  <tr>
+   <td>buildingIdentifier
+   </td>
+   <td>Ідентифікатор об’єкта
+   </td>
+   <td>Ідентифікатор будинку або споруди з таблиці Buildings. Наприклад: 0015.
+   </td>
+   <td>Текст (string)
+   </td>
+   <td>Істина (true)
+   </td>
+  </tr>
+  <tr>
+   <td>buildingName
+   </td>
+   <td>Назва об’єкта
+   </td>
+   <td>Назва будинку або споруди з таблиці Buildings. Наприклад: Головний корпус Поліклініки №1.
+   </td>
+   <td>Текст (string)
+   </td>
+   <td>Істина (true)
+   </td>
+  </tr>
+</table>
+
+
+<h2 style="margin-bottom: 15px; margin-top: 50px;">4. Оформлення паспортів наборів та ресурсів</h2>
+
+
+
+
+
+<div style="margin-bottom: 25px; background-color:#F4F7FA; padding: 20px"><p><b>Зверніть увагу!</b> Назва набору має відповідати Переліку, затвердженому <a href="https://zakon.rada.gov.ua/laws/show/835-2015-%D0%BF">Постановою КМУ № 835 (зі змінами)</a>. Також вона може включати назву розпорядника або населеного пункту, з яким пов'язані дані. Це полегшує пошук набору в пошукових системах.</p></div>
+
+
+<p style="margin-bottom: 10px; text-align: center;"><strong>Таблиця 3 — Приклад паспорта набору даних на data.gov.ua</strong></p>
+
+<table style="margin-bottom: 30px">
+  <tr>
+   <td><strong>Назва поля</strong>
+   </td>
+   <td><strong>Приклад заповнення</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>Назва набору
+   </td>
+   <td>Дані про доступність будівель для осіб з інвалідністю та інших маломобільних груп населення
+   </td>
+  </tr>
+  <tr>
+   <td>Відомості про мову інформації, яка міститься у наборі
+   </td>
+   <td>Українська
+   </td>
+  </tr>
+  <tr>
+   <td>Частота оновлення
+   </td>
+   <td>Щотижня
+   </td>
+  </tr>
+  <tr>
+   <td>Опис
+   </td>
+   <td>Набір включає два ресурси: перелік будинків та споруд, в яких здійснені перевірки або моніторинг дотримання вимог доступності (ресурс Buildings); перелік вимог державних будівельних норм і стан їх дотримання в будівлях та спорудах (ресурс Norms).
+   </td>
+  </tr>
+  <tr>
+   <td>Підстава та призначення збору інформації
+   </td>
+   <td>Закон України «Про регулювання містобудівної діяльності» від 17.02.2011 № 3038-VI, Закон України «Про благоустрій населених пунктів» від 06.09.2005 № 2807-IV, Закон України «Про основи соціальної захищеності осіб з інвалідністю в Україні» від 21.03.1991 № 875-XII, Постанова КМУ від 23.05.2011 № 553
+   </td>
+  </tr>
+  <tr>
+   <td>Ключові слова
+   </td>
+   <td>інклюзивність, доступність, будівлі, споруди, ДБН, пандуси, маломобільні групи, тактильні засоби, тифлотехнічні засоби
+   </td>
+  </tr>
+  <tr>
+   <td>Відповідальна особа
+   </td>
+   <td>Симоненко Олена Петрівна
+   </td>
+  </tr>
+  <tr>
+   <td>Адреса електронної пошти відповідальної особи
+   </td>
+   <td>o.symonenko@example.gov.ua
+   </td>
+  </tr>
+</table>
+
+
+<p style="margin-bottom: 10px; text-align: center;"><strong>Таблиця 4 — Приклад паспорта ресурсу Buildings </strong></p>
+
+<table style="margin-bottom: 30px">
+  <tr>
+   <td><strong>Назва поля</strong>
+   </td>
+   <td><strong>Приклад заповнення</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>Назва ресурсу
+   </td>
+   <td>Buildings.xlsx
+   </td>
+  </tr>
+  <tr>
+   <td>Опис
+   </td>
+   <td>Таблиця містить перелік будинків та споруд, в яких здійснені перевірки або моніторинг дотримання вимог доступності. Зокрема, назву, адресу, дату, інформацію про суб'єктів, що здійснювали перевірки, та суб'єктів містобудування, відповідальних за дотримання вимог. Кожним записом в таблиці є одна будівля або споруда.
+   </td>
+  </tr>
+  <tr>
+   <td>Формат
+   </td>
+   <td>XLSX
+   </td>
+  </tr>
+</table>
+
+
+<p style="margin-bottom: 10px; text-align: center;"><strong>Таблиця 5 — Приклад паспорта ресурсу Norms </strong></p>
+
+<table style="margin-bottom: 30px">
+  <tr>
+   <td><strong>Назва поля</strong>
+   </td>
+   <td><strong>Приклад заповнення</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>Назва ресурсу
+   </td>
+   <td>Norms.xlsx
+   </td>
+  </tr>
+  <tr>
+   <td>Опис
+   </td>
+   <td>Таблиця містить перелік вимог державних будівельних норм та стан їх дотримання в будівлях та спорудах, що пройшли перевірку/моніторинг. Зокрема, номер державних будівельних норм, номер пункту, вимога норми, статус дотримання, фото, назва та ідентифікатор будинку або споруди.
+   </td>
+  </tr>
+  <tr>
+   <td>Формат
+   </td>
+   <td>XLSX
+   </td>
+  </tr>
+</table>
+
